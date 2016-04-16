@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ComprobanteService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IComprobanteService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:SignedSupportingTokens>
+                      <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:WssUsernameToken10 />
+                          </wsp:Policy>
+                        </sp:UsernameToken>
+                      </wsp:Policy>
+                    </sp:SignedSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy />
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComprobanteService_ObtenerComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerComprobantesPorCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobantesPorCliente" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerComprobantesPorCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobantesPorClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerComprobantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerComprobantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerUltimoComprobanteCargado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUltimoComprobanteCargado" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerUltimoComprobanteCargado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerUltimoComprobanteCargadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTipoComprobantePorCodigoAfip_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoComprobantePorCodigoAfip" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTipoComprobantePorCodigoAfip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTipoComprobantePorCodigoAfipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTiposComprobantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTiposComprobantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTiposContrato_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposContrato" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerTiposContrato_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTiposContratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerAniosFacturacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAniosFacturacion" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerAniosFacturacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerAniosFacturacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_AgregarVisualizacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarVisualizacion" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_AgregarVisualizacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AgregarVisualizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_CambiarEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstado" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_CambiarEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CambiarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstado" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstados_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstados" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerArchivoPorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerArchivoPorId" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerArchivoPorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerArchivoPorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerArchivo_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerArchivo" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerArchivo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerArchivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstadoComprobantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadoComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_ObtenerEstadoComprobantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerEstadoComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_AsociarFechaDeRecepcion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarFechaDeRecepcion" />
+  </wsdl:message>
+  <wsdl:message name="IComprobanteService_AsociarFechaDeRecepcion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AsociarFechaDeRecepcionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComprobanteService">
+    <wsdl:operation name="ObtenerComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobante" message="tns:IComprobanteService_ObtenerComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobanteResponse" message="tns:IComprobanteService_ObtenerComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComprobantesPorCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobantesPorCliente" message="tns:IComprobanteService_ObtenerComprobantesPorCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobantesPorClienteResponse" message="tns:IComprobanteService_ObtenerComprobantesPorCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComprobantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobantes" message="tns:IComprobanteService_ObtenerComprobantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerComprobantesResponse" message="tns:IComprobanteService_ObtenerComprobantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUltimoComprobanteCargado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerUltimoComprobanteCargado" message="tns:IComprobanteService_ObtenerUltimoComprobanteCargado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerUltimoComprobanteCargadoResponse" message="tns:IComprobanteService_ObtenerUltimoComprobanteCargado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoComprobantePorCodigoAfip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTipoComprobantePorCodigoAfip" message="tns:IComprobanteService_ObtenerTipoComprobantePorCodigoAfip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTipoComprobantePorCodigoAfipResponse" message="tns:IComprobanteService_ObtenerTipoComprobantePorCodigoAfip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposComprobantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTiposComprobantes" message="tns:IComprobanteService_ObtenerTiposComprobantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTiposComprobantesResponse" message="tns:IComprobanteService_ObtenerTiposComprobantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposContrato">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTiposContrato" message="tns:IComprobanteService_ObtenerTiposContrato_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerTiposContratoResponse" message="tns:IComprobanteService_ObtenerTiposContrato_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAniosFacturacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerAniosFacturacion" message="tns:IComprobanteService_ObtenerAniosFacturacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerAniosFacturacionResponse" message="tns:IComprobanteService_ObtenerAniosFacturacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AgregarVisualizacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/AgregarVisualizacion" message="tns:IComprobanteService_AgregarVisualizacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/AgregarVisualizacionResponse" message="tns:IComprobanteService_AgregarVisualizacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/CambiarEstado" message="tns:IComprobanteService_CambiarEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/CambiarEstadoResponse" message="tns:IComprobanteService_CambiarEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstado" message="tns:IComprobanteService_ObtenerEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstadoResponse" message="tns:IComprobanteService_ObtenerEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstados" message="tns:IComprobanteService_ObtenerEstados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstadosResponse" message="tns:IComprobanteService_ObtenerEstados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerArchivoPorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerArchivoPorId" message="tns:IComprobanteService_ObtenerArchivoPorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerArchivoPorIdResponse" message="tns:IComprobanteService_ObtenerArchivoPorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerArchivo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerArchivo" message="tns:IComprobanteService_ObtenerArchivo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerArchivoResponse" message="tns:IComprobanteService_ObtenerArchivo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoComprobantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstadoComprobantes" message="tns:IComprobanteService_ObtenerEstadoComprobantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/ObtenerEstadoComprobantesResponse" message="tns:IComprobanteService_ObtenerEstadoComprobantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AsociarFechaDeRecepcion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComprobanteService/AsociarFechaDeRecepcion" message="tns:IComprobanteService_AsociarFechaDeRecepcion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComprobanteService/AsociarFechaDeRecepcionResponse" message="tns:IComprobanteService_AsociarFechaDeRecepcion_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IComprobanteService" type="tns:IComprobanteService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IComprobanteService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ObtenerComprobante">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerComprobante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComprobantesPorCliente">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerComprobantesPorCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerUltimoComprobanteCargado">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerUltimoComprobanteCargado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTipoComprobantePorCodigoAfip">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerTipoComprobantePorCodigoAfip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerTiposComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTiposContrato">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerTiposContrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerAniosFacturacion">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerAniosFacturacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AgregarVisualizacion">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/AgregarVisualizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CambiarEstado">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/CambiarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstado">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstados">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerEstados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerArchivoPorId">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerArchivoPorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerArchivo">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerArchivo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerEstadoComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/ObtenerEstadoComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsociarFechaDeRecepcion">
+      <soap12:operation soapAction="http://tempuri.org/IComprobanteService/AsociarFechaDeRecepcion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComprobanteService">
+    <wsdl:port name="WSHttpBinding_IComprobanteService" binding="tns:WSHttpBinding_IComprobanteService">
+      <soap12:address location="https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost/FacturaElectronicaWsHost/ComprobanteService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

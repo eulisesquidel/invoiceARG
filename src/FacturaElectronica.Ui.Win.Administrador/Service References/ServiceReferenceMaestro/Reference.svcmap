@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b5f6a573-3087-4203-81e4-c7901fd9312d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1500/MaestroService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MaestroService.disco" MetadataType="Disco" ID="4bddca60-5a1c-4793-8931-29310c993a09" SourceId="1" SourceUrl="http://localhost:1500/MaestroService.svc?disco" />
+    <MetadataFile FileName="MaestroService.xsd" MetadataType="Schema" ID="ce36e51b-e96b-446d-8a17-8f9ec9f13045" SourceId="1" SourceUrl="http://localhost:1500/MaestroService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MaestroService1.xsd" MetadataType="Schema" ID="8a5c8b6c-078c-40ad-98fe-c89e4b755d1c" SourceId="1" SourceUrl="http://localhost:1500/MaestroService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MaestroService2.xsd" MetadataType="Schema" ID="d081de1c-5730-4cc8-a4da-92cf24394537" SourceId="1" SourceUrl="http://localhost:1500/MaestroService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MaestrosSevice.wsdl" MetadataType="Wsdl" ID="98dd4663-9932-4fdd-a85c-e764b987e332" SourceId="1" SourceUrl="http://localhost:1500/MaestroService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

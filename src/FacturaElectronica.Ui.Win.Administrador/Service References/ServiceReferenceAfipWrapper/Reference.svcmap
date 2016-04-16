@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4c2a9d7b-f5dd-4113-afd7-88df3d21f4d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AfipWrapperService3.xsd" MetadataType="Schema" ID="2694a78e-ec19-4a4f-b53b-83ebf86bdd3b" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd0" />
+    <MetadataFile FileName="AfipWrapperService1.disco" MetadataType="Disco" ID="99283077-b4da-4613-82d8-dad073f1b68e" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?disco" />
+    <MetadataFile FileName="AfipWrapperService31.xsd" MetadataType="Schema" ID="cb7a3142-bdc2-4d7a-a380-22810aa9dff1" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd1" />
+    <MetadataFile FileName="AfipWrapperService32.xsd" MetadataType="Schema" ID="5efdf7b9-e157-4448-b7e0-5b7fb2cef9e1" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd5" />
+    <MetadataFile FileName="WsfeClient1.wsdl" MetadataType="Wsdl" ID="3604f8fc-f35a-4987-807d-d6a33986fce6" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?wsdl" />
+    <MetadataFile FileName="AfipWrapperService33.xsd" MetadataType="Schema" ID="8a0fc9b9-7958-4fa0-bd2e-2ee2318fae03" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd3" />
+    <MetadataFile FileName="AfipWrapperService34.xsd" MetadataType="Schema" ID="125c0338-f971-4b45-93c5-3f4af1cf106f" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd2" />
+    <MetadataFile FileName="AfipWrapperService35.xsd" MetadataType="Schema" ID="cd139673-62a9-441f-ae3d-f6e828b88435" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

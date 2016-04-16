@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FECAERequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FeCabReq>
+    <CantReg>1</CantReg>
+    <PtoVta>2000</PtoVta>
+    <CbteTipo>1</CbteTipo>
+  </FeCabReq>
+  <FeDetReq>
+    <FECAEDetRequest>
+      <Concepto>0</Concepto>
+      <DocTipo>0</DocTipo>
+      <DocNro>0</DocNro>
+      <CbteDesde>1</CbteDesde>
+      <CbteHasta>1</CbteHasta>
+      <CbteFch>20111201</CbteFch>
+      <ImpTotal>0</ImpTotal>
+      <ImpTotConc>0</ImpTotConc>
+      <ImpNeto>0</ImpNeto>
+      <ImpOpEx>0</ImpOpEx>
+      <ImpTrib>0</ImpTrib>
+      <ImpIVA>0</ImpIVA>
+      <MonCotiz>0</MonCotiz>
+    </FECAEDetRequest>
+  </FeDetReq>
+</FECAERequest>

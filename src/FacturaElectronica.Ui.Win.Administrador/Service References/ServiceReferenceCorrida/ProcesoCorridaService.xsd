@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" />
+  <xs:import schemaLocation="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts.Search" />
+  <xs:element name="CrearNuevaCorrida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nombreDeArchivo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CrearNuevaCorridaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" minOccurs="0" name="CrearNuevaCorridaResult" nillable="true" type="q1:CorridaAutorizacionDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EjecutarCorrida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="corridaId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCorridas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts.Search" minOccurs="0" name="search" nillable="true" type="q2:CorridaSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerCorridasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" minOccurs="0" name="ObtenerCorridasResult" nillable="true" type="q3:ArrayOfCorridaAutorizacionDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="corridaId" type="xs:long" />
+        <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" minOccurs="0" name="ConsultarLogResult" nillable="true" type="q4:ArrayOfLogCorridaDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F0BC4BA-587E-4328-B4C8-BDA93EDC25AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FacturaElectronica.Ui.Web</RootNamespace>
+    <AssemblyName>FacturaElectronica.Ui.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.20229.23215, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalLibraries\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccesoDenegado.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Images\aprobar.png" />
+    <Content Include="Images\clientes.png" />
+    <Content Include="Images\delItem.gif" />
+    <Content Include="Images\editar.png" />
+    <Content Include="Images\editItem.png" />
+    <Content Include="Images\eliminar.png" />
+    <Content Include="Images\endesaForEmail.png" />
+    <Content Include="Images\excel.png" />
+    <Content Include="Images\header_estados.png" />
+    <Content Include="Images\icon_blockcollapsed.png" />
+    <Content Include="Images\icon_blockexpanded.png" />
+    <Content Include="Images\importar.png" />
+    <Content Include="Images\JQuery\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Images\JQuery\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Images\JQuery\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Images\JQuery\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Images\JQuery\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Images\JQuery\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Images\JQuery\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Images\JQuery\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Images\JQuery\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Images\JQuery\ui-icons_222222_256x240.png" />
+    <Content Include="Images\JQuery\ui-icons_228ef1_256x240.png" />
+    <Content Include="Images\JQuery\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Images\JQuery\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Images\JQuery\ui-icons_ffffff_256x240.png" />
+    <Content Include="Images\key.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logoubatic.jpg" />
+    <Content Include="Images\mail_alert.png" />
+    <Content Include="Images\no_visualizado.png" />
+    <Content Include="Images\no_visualizado_vencido.png" />
+    <Content Include="Images\pdf.png" />
+    <Content Include="Images\roller.gif" />
+    <Content Include="Images\roller_orange.gif" />
+    <Content Include="Images\save_file.png" />
+    <Content Include="Images\viewItem.png" />
+    <Content Include="Images\visualizado.png" />
+    <Content Include="Images\warning.png" />
+    <Content Include="Pages\CambiarPassword.aspx" />
+    <Content Include="Pages\ClienteAuditoria.aspx" />
+    <Content Include="Pages\ClienteDetalle.aspx" />
+    <Content Include="Pages\ClienteListado.aspx" />
+    <Content Include="Pages\ComprobanteAuditoria.aspx" />
+    <Content Include="Pages\ComprobantesListado.aspx" />
+    <Content Include="Pages\Contacto.aspx" />
+    <Content Include="Pages\InfoVisualizacion.aspx" />
+    <Content Include="Pages\MensajesAlertasClientes.aspx" />
+    <Content Include="Pages\MensajesAlertasDetalle.aspx" />
+    <Content Include="Pages\MensajesAlertasListado.aspx" />
+    <Content Include="Pages\ReporteComprobantes.aspx" />
+    <Content Include="Pages\Test.aspx" />
+    <Content Include="Pages\TestGrid.aspx" />
+    <Content Include="Pages\UsuariosDetalle.aspx" />
+    <Content Include="Pages\UsuariosListado.aspx" />
+    <Content Include="Scripts\ajaxupload.js" />
+    <Content Include="Scripts\AppCommon.js" />
+    <Content Include="Scripts\DirtyCheck.js" />
+    <Content Include="Scripts\ErrorPanel.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.10.custom.min.js" />
+    <Content Include="Scripts\jquery.datepick-es-AR.js" />
+    <Content Include="Scripts\jquery.datepick.js" />
+    <Content Include="Scripts\jqueryWCF.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\json2.min.js" />
+    <Content Include="Scripts\popupModal.js" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Styles\DynamicSite.css" />
+    <Content Include="Styles\GridStyle.css" />
+    <Content Include="Styles\jquery-ui-1.8.10.custom.css" />
+    <Content Include="Styles\jquery.datepick.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoDenegado.aspx.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccesoDenegado.aspx.designer.cs">
+      <DependentUpon>AccesoDenegado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\ComprobantesBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\Constants.cs" />
+    <Compile Include="Code\ExceptionManager.cs" />
+    <Compile Include="Code\GridViewExportUtil.cs" />
+    <Compile Include="Code\IWebMessanger.cs" />
+    <Compile Include="Code\Operaciones.cs" />
+    <Compile Include="Code\PdfHttpHandler.cs" />
+    <Compile Include="Code\Roles.cs" />
+    <Compile Include="Code\Search\ObjectDataSourceComprobanteListado.cs" />
+    <Compile Include="Code\Security\CustomIdentity.cs" />
+    <Compile Include="Code\Security\CustomPrincipal.cs" />
+    <Compile Include="Code\ServiceFactory.cs" />
+    <Compile Include="Code\UIHelper.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\FileHandler.ashx.cs">
+      <DependentUpon>FileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CambiarPassword.aspx.cs">
+      <DependentUpon>CambiarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CambiarPassword.aspx.designer.cs">
+      <DependentUpon>CambiarPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClienteAuditoria.aspx.cs">
+      <DependentUpon>ClienteAuditoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ClienteAuditoria.aspx.designer.cs">
+      <DependentUpon>ClienteAuditoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClienteDetalle.aspx.cs">
+      <DependentUpon>ClienteDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ClienteDetalle.aspx.designer.cs">
+      <DependentUpon>ClienteDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClienteListado.aspx.cs">
+      <DependentUpon>ClienteListado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ClienteListado.aspx.designer.cs">
+      <DependentUpon>ClienteListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ComprobanteAuditoria.aspx.cs">
+      <DependentUpon>ComprobanteAuditoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ComprobanteAuditoria.aspx.designer.cs">
+      <DependentUpon>ComprobanteAuditoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ComprobantesListado.aspx.cs">
+      <DependentUpon>ComprobantesListado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ComprobantesListado.aspx.designer.cs">
+      <DependentUpon>ComprobantesListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InfoVisualizacion.aspx.cs">
+      <DependentUpon>InfoVisualizacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\InfoVisualizacion.aspx.designer.cs">
+      <DependentUpon>InfoVisualizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\PdfHandler.ashx.cs">
+      <DependentUpon>PdfHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasClientes.aspx.cs">
+      <DependentUpon>MensajesAlertasClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasClientes.aspx.designer.cs">
+      <DependentUpon>MensajesAlertasClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasDetalle.aspx.cs">
+      <DependentUpon>MensajesAlertasDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasDetalle.aspx.designer.cs">
+      <DependentUpon>MensajesAlertasDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasListado.aspx.cs">
+      <DependentUpon>MensajesAlertasListado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\MensajesAlertasListado.aspx.designer.cs">
+      <DependentUpon>MensajesAlertasListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ReporteComprobantes.aspx.cs">
+      <DependentUpon>ReporteComprobantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ReporteComprobantes.aspx.designer.cs">
+      <DependentUpon>ReporteComprobantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestGrid.aspx.cs">
+      <DependentUpon>TestGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\TestGrid.aspx.designer.cs">
+      <DependentUpon>TestGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsuariosDetalle.aspx.cs">
+      <DependentUpon>UsuariosDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UsuariosDetalle.aspx.designer.cs">
+      <DependentUpon>UsuariosDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsuariosListado.aspx.cs">
+      <DependentUpon>UsuariosListado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UsuariosListado.aspx.designer.cs">
+      <DependentUpon>UsuariosListado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturaElectronica.Afip.Business\FacturaElectronica.Afip.Business.csproj">
+      <Project>{AE2952B6-C7D3-4C5B-ADC2-97C08D01B593}</Project>
+      <Name>FacturaElectronica.Afip.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Business\FacturaElectronica.Business.csproj">
+      <Project>{EDB6E9BA-CD60-4D99-AF5B-18024D10DF2A}</Project>
+      <Name>FacturaElectronica.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Common\FacturaElectronica.Common.csproj">
+      <Project>{32774052-7837-4A33-8A3C-C80FCAB5EA1E}</Project>
+      <Name>FacturaElectronica.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Core\FacturaElectronica.Core.csproj">
+      <Project>{94811E1D-F79B-4BB7-A664-6D0283C8CECE}</Project>
+      <Name>FacturaElectronica.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handlers\PdfHandler.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Handlers\FileHandler.ashx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62944</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost/FacturaElectronicaWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

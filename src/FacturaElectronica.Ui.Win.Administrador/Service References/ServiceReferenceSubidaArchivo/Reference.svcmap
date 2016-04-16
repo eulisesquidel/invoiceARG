@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a29dd43b-af1a-4a8a-a025-3e043b591635" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SubidaArchivoService5.xsd" MetadataType="Schema" ID="50241ec9-4905-43eb-806a-1af4822d9396" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?xsd=xsd4" />
+    <MetadataFile FileName="SubidaArchivoService51.xsd" MetadataType="Schema" ID="8bff7622-1de8-45bf-b25d-65aaee2312a4" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SubidaArchivoService1.disco" MetadataType="Disco" ID="38f440db-aee3-4b03-a8f1-3bb5a0855a80" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?disco" />
+    <MetadataFile FileName="SubidaArchivoService1.wsdl" MetadataType="Wsdl" ID="55eb242a-f5e7-4df7-a6a9-71de4460445f" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?wsdl" />
+    <MetadataFile FileName="SubidaArchivoService52.xsd" MetadataType="Schema" ID="a31026dc-1b18-4d0e-9896-8f6cacd1a7e2" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SubidaArchivoService53.xsd" MetadataType="Schema" ID="4c5a0cf2-c944-4d98-9d50-4ccc6b6e2b40" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SubidaArchivoService54.xsd" MetadataType="Schema" ID="c370f90f-3fc1-4871-9b7c-e40fe17e8cef" SourceId="1" SourceUrl="https://localhost/FacturaElectronicaWsHost/SubidaArchivoService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

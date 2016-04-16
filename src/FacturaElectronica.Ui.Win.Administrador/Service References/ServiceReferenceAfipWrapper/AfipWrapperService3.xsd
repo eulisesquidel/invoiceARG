@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd2" namespace="http://ar.gov.afip.dif.FEV1/" />
+  <xs:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" />
+  <xs:element name="GetTiposMonedas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q1:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposMonedasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposMonedasResult" nillable="true" type="q2:MonedaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCotizacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q3:FEAuthRequest" />
+        <xs:element minOccurs="0" name="MonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCotizacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetCotizacionResult" nillable="true" type="q4:FECotizacionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposCbte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q5:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposCbteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposCbteResult" nillable="true" type="q6:CbteTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposTributos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q7:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposTributosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposTributosResult" nillable="true" type="q8:FETributoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposIva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q9:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposIvaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposIvaResult" nillable="true" type="q10:IvaTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposOpcional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q11:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposOpcionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposOpcionalResult" nillable="true" type="q12:OpcionalTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompTotXRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q13:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompTotXRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompTotXRequestResult" nillable="true" type="q14:FERegXReqResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q15:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposDocResult" nillable="true" type="q16:DocTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompUltimoAutorizado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q17:FEAuthRequest" />
+        <xs:element minOccurs="0" name="ptoVta" type="xs:int" />
+        <xs:element minOccurs="0" name="cbteTipo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompUltimoAutorizadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompUltimoAutorizadoResult" nillable="true" type="q18:FERecuperaLastCbteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompConsultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q19:FEAuthRequest" />
+        <xs:element xmlns:q20="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feCompConsultaReq" nillable="true" type="q20:FECompConsultaReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompConsultarResult" nillable="true" type="q21:FECompConsultaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q22:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposConceptoResult" nillable="true" type="q23:ConceptoTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicket">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="ObtenerTicketResult" nillable="true" type="q24:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutorizarComprobanteExportacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q25:ClsFEXAuthRequest" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexRequest" nillable="true" type="q26:ClsFEXRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutorizarComprobanteExportacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="AutorizarComprobanteExportacionResult" nillable="true" type="q27:FEXResponseAuthorize" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPermiso">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q28:ClsFEXAuthRequest" />
+        <xs:element minOccurs="0" name="idPermiso" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="destMerc" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPermisoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="CheckPermisoResult" nillable="true" type="q29:FEXResponse_CheckPermiso" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComprobante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q30:ClsFEXAuthRequest" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexGetCmp" nillable="true" type="q31:ClsFEXGetCMP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetComprobanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetComprobanteResult" nillable="true" type="q32:FEXGetCMPResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoComprobanteAutorizado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexLastCmp" nillable="true" type="q33:ClsFEX_LastCMP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUltimoComprobanteAutorizadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetUltimoComprobanteAutorizadoResult" nillable="true" type="q34:FEXResponseLast_CMP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q35:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLastIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetLastIdResult" nillable="true" type="q36:FEXResponse_LastID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposComprobantes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="auth" nillable="true" type="q37:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposComprobantesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetTiposComprobantesResult" nillable="true" type="q38:FEXResponse_Cbte_Tipo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFexCotizacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q39:ClsFEXAuthRequest" />
+        <xs:element minOccurs="0" name="monId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFexCotizacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetFexCotizacionResult" nillable="true" type="q40:FEXResponse_Ctz" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCuits">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q41:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCuitsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetCuitsResult" nillable="true" type="q42:FEXResponse_DST_cuit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaises">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q43:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPaisesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetPaisesResult" nillable="true" type="q44:FEXResponse_DST_pais" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdiomas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q45:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIdiomasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetIdiomasResult" nillable="true" type="q46:FEXResponse_Idi" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncoterms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q47:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncotermsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetIncotermsResult" nillable="true" type="q48:FEXResponse_Inc" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonedas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q49:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMonedasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetMonedasResult" nillable="true" type="q50:FEXResponse_Mon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPuntosDeVenta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q51:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPuntosDeVentaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetPuntosDeVentaResult" nillable="true" type="q52:FEXResponse_PtoVenta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDeExportacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q53:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDeExportacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetTiposDeExportacionResult" nillable="true" type="q54:FEXResponse_Tex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnidadesDeMedida">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="fexAuthRequest" nillable="true" type="q55:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUnidadesDeMedidaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="GetUnidadesDeMedidaResult" nillable="true" type="q56:FEXResponse_Umed" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicketFex">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicketFexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" minOccurs="0" name="ObtenerTicketFexResult" nillable="true" type="q57:ClsFEXAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

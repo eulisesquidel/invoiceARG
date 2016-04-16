@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfWebServiceAfipDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WebServiceAfipDto" nillable="true" type="tns:WebServiceAfipDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWebServiceAfipDto" nillable="true" type="tns:ArrayOfWebServiceAfipDto" />
+  <xs:complexType name="WebServiceAfipDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WebServiceAfipDto" nillable="true" type="tns:WebServiceAfipDto" />
+</xs:schema>

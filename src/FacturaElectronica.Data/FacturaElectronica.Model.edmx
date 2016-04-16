@@ -1,0 +1,1999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FacturaElectronicaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="FacturaElectronicaModelStoreContainer">
+          <EntitySet Name="ArchivoAsociado" EntityType="FacturaElectronicaModel.Store.ArchivoAsociado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ArchivoAsociado_Auditoria" EntityType="FacturaElectronicaModel.Store.ArchivoAsociado_Auditoria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente" EntityType="FacturaElectronicaModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Cliente_Auditoria" EntityType="FacturaElectronicaModel.Store.Cliente_Auditoria" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comprobante" EntityType="FacturaElectronicaModel.Store.Comprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CorridaAutorizacion" EntityType="FacturaElectronicaModel.Store.CorridaAutorizacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CorridaSubidaArchivo" EntityType="FacturaElectronicaModel.Store.CorridaSubidaArchivo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CorridaSubidaArchivoDetalle" EntityType="FacturaElectronicaModel.Store.CorridaSubidaArchivoDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CorridaSubidaArchivoLog" EntityType="FacturaElectronicaModel.Store.CorridaSubidaArchivoLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleCabecera" EntityType="FacturaElectronicaModel.Store.DetalleCabecera" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleComprobante" EntityType="FacturaElectronicaModel.Store.DetalleComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleComprobanteComprobante" EntityType="FacturaElectronicaModel.Store.DetalleComprobanteComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleError" EntityType="FacturaElectronicaModel.Store.DetalleError" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DetalleEvento" EntityType="FacturaElectronicaModel.Store.DetalleEvento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EstadoArchivoAsociado" EntityType="FacturaElectronicaModel.Store.EstadoArchivoAsociado" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LogCorrida" EntityType="FacturaElectronicaModel.Store.LogCorrida" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Mensaje" EntityType="FacturaElectronicaModel.Store.Mensaje" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MensajeCliente" EntityType="FacturaElectronicaModel.Store.MensajeCliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ObservacionComprobante" EntityType="FacturaElectronicaModel.Store.ObservacionComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rol" EntityType="FacturaElectronicaModel.Store.Rol" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoComprobante" EntityType="FacturaElectronicaModel.Store.TipoComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoConcepto" EntityType="FacturaElectronicaModel.Store.TipoConcepto" store:Type="Tables" store:Schema="dbo" store:Name="TipoConcepto">
+            <DefiningQuery>SELECT 
+      [TipoConcepto].[Id] AS [Id], 
+      [TipoConcepto].[Descripcion] AS [Descripcion]
+      FROM [dbo].[TipoConcepto] AS [TipoConcepto]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TipoContrato" EntityType="FacturaElectronicaModel.Store.TipoContrato" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TipoDocumento" EntityType="FacturaElectronicaModel.Store.TipoDocumento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="FacturaElectronicaModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsuarioRol" EntityType="FacturaElectronicaModel.Store.UsuarioRol" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VisualizacionComprobante" EntityType="FacturaElectronicaModel.Store.VisualizacionComprobante" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WebServiceAfip" EntityType="FacturaElectronicaModel.Store.WebServiceAfip" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ArchivoAsociado_Auditoria_ArchivoAsociado" Association="FacturaElectronicaModel.Store.FK_ArchivoAsociado_Auditoria_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+            <End Role="ArchivoAsociado_Auditoria" EntitySet="ArchivoAsociado_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_Auditoria_Usuario" Association="FacturaElectronicaModel.Store.FK_ArchivoAsociado_Auditoria_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="ArchivoAsociado_Auditoria" EntitySet="ArchivoAsociado_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_Comprobante" Association="FacturaElectronicaModel.Store.FK_ArchivoAsociado_Comprobante">
+            <End Role="Comprobante" EntitySet="Comprobante" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_Estado" Association="FacturaElectronicaModel.Store.FK_ArchivoAsociado_Estado">
+            <End Role="EstadoArchivoAsociado" EntitySet="EstadoArchivoAsociado" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_TipoContrato" Association="FacturaElectronicaModel.Store.FK_ArchivoAsociado_TipoContrato">
+            <End Role="TipoContrato" EntitySet="TipoContrato" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Auditoria_Cliente" Association="FacturaElectronicaModel.Store.FK_Cliente_Auditoria_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Cliente_Auditoria" EntitySet="Cliente_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Auditoria_Usuario" Association="FacturaElectronicaModel.Store.FK_Cliente_Auditoria_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Cliente_Auditoria" EntitySet="Cliente_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobante_Cliente" Association="FacturaElectronicaModel.Store.FK_Comprobante_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Comprobante" EntitySet="Comprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_TiposComprobantes" Association="FacturaElectronicaModel.Store.FK_Comprobantes_TiposComprobantes">
+            <End Role="TipoComprobante" EntitySet="TipoComprobante" />
+            <End Role="Comprobante" EntitySet="Comprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorridaSubidaArchivoDetalle_ArchivoAsociado" Association="FacturaElectronicaModel.Store.FK_CorridaSubidaArchivoDetalle_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+            <End Role="CorridaSubidaArchivoDetalle" EntitySet="CorridaSubidaArchivoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo" Association="FacturaElectronicaModel.Store.FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo">
+            <End Role="CorridaSubidaArchivo" EntitySet="CorridaSubidaArchivo" />
+            <End Role="CorridaSubidaArchivoDetalle" EntitySet="CorridaSubidaArchivoDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo" Association="FacturaElectronicaModel.Store.FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo">
+            <End Role="CorridaSubidaArchivo" EntitySet="CorridaSubidaArchivo" />
+            <End Role="CorridaSubidaArchivoLog" EntitySet="CorridaSubidaArchivoLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleCabeceras_Corridas" Association="FacturaElectronicaModel.Store.FK_DetalleCabeceras_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacion" />
+            <End Role="DetalleCabecera" EntitySet="DetalleCabecera" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleComprobantes_Corridas" Association="FacturaElectronicaModel.Store.FK_DetalleComprobantes_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacion" />
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleComprobantesComprobantes_Comprobantes" Association="FacturaElectronicaModel.Store.FK_DetalleComprobantesComprobantes_Comprobantes">
+            <End Role="Comprobante" EntitySet="Comprobante" />
+            <End Role="DetalleComprobanteComprobante" EntitySet="DetalleComprobanteComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleComprobantesComprobantes_DetalleComprobantes" Association="FacturaElectronicaModel.Store.FK_DetalleComprobantesComprobantes_DetalleComprobantes">
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobante" />
+            <End Role="DetalleComprobanteComprobante" EntitySet="DetalleComprobanteComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Errores_Corridas" Association="FacturaElectronicaModel.Store.FK_Errores_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacion" />
+            <End Role="DetalleError" EntitySet="DetalleError" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventos_Corridas" Association="FacturaElectronicaModel.Store.FK_Eventos_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacion" />
+            <End Role="DetalleEvento" EntitySet="DetalleEvento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogCorrida_CorridaAutorizacion" Association="FacturaElectronicaModel.Store.FK_LogCorrida_CorridaAutorizacion">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacion" />
+            <End Role="LogCorrida" EntitySet="LogCorrida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MensajeCliente_Cliente" Association="FacturaElectronicaModel.Store.FK_MensajeCliente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="MensajeCliente" EntitySet="MensajeCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MensajeCliente_Mensaje" Association="FacturaElectronicaModel.Store.FK_MensajeCliente_Mensaje">
+            <End Role="Mensaje" EntitySet="Mensaje" />
+            <End Role="MensajeCliente" EntitySet="MensajeCliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObservacionesComprobantes_DetalleComprobantes" Association="FacturaElectronicaModel.Store.FK_ObservacionesComprobantes_DetalleComprobantes">
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobante" />
+            <End Role="ObservacionComprobante" EntitySet="ObservacionComprobante" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Clientes" Association="FacturaElectronicaModel.Store.FK_Usuarios_Clientes">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosRoles_Roles" Association="FacturaElectronicaModel.Store.FK_UsuariosRoles_Roles">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="UsuarioRol" EntitySet="UsuarioRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuariosRoles_Usuarios" Association="FacturaElectronicaModel.Store.FK_UsuariosRoles_Usuarios">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="UsuarioRol" EntitySet="UsuarioRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisualizacionComprobante_ArchivoAsociado" Association="FacturaElectronicaModel.Store.FK_VisualizacionComprobante_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociado" />
+            <End Role="VisualizacionComprobante" EntitySet="VisualizacionComprobante" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ArchivoAsociado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ComprobanteId" Type="bigint" Nullable="false" />
+          <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="PathArchivo" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="NroComprobante" Type="bigint" Nullable="false" />
+          <Property Name="TipoContratoId" Type="int" />
+          <Property Name="DiasVencimiento" Type="int" />
+          <Property Name="FechaVencimiento" Type="date" />
+          <Property Name="FechaDeCarga" Type="datetime" Nullable="false" />
+          <Property Name="MesFacturacion" Type="int" Nullable="false" />
+          <Property Name="AnioFacturacion" Type="int" Nullable="false" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="MontoTotal" Type="numeric" Precision="20" Scale="4" />
+          <Property Name="FechaDeRecepcion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ArchivoAsociado_Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+          <Property Name="CampoModificado" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="ValorAnterior" Type="varchar" MaxLength="300" />
+          <Property Name="ValorNuevo" Type="varchar" MaxLength="300" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="ArchivoAsociadoId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RazonSocial" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="CUIT" Type="bigint" />
+          <Property Name="NombreContacto" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="ApellidoContacto" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="EmailContacto" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="NombreContactoSecundario" Type="varchar" MaxLength="100" />
+          <Property Name="ApellidoContactoSecundario" Type="varchar" MaxLength="100" />
+          <Property Name="EmailContactoSecundario" Type="varchar" MaxLength="100" />
+          <Property Name="CalculaVencimientoConVisualizacionDoc" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente_Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteId" Type="bigint" Nullable="false" />
+          <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+          <Property Name="CampoModificado" Type="varchar" MaxLength="200" />
+          <Property Name="ValorAnterior" Type="varchar" MaxLength="300" />
+          <Property Name="ValorNuevo" Type="varchar" MaxLength="300" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Comprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TipoComprobanteId" Type="int" Nullable="false" />
+          <Property Name="FechaDeCarga" Type="datetime" Nullable="false" />
+          <Property Name="ClienteId" Type="bigint" />
+          <Property Name="CAE" Type="varchar" MaxLength="14" />
+          <Property Name="CAEFechaVencimiento" Type="datetime" />
+          <Property Name="CbteDesde" Type="bigint" />
+          <Property Name="CbteHasta" Type="bigint" />
+          <Property Name="CbteFecha" Type="datetime" />
+          <Property Name="PtoVta" Type="int" />
+        </EntityType>
+        <EntityType Name="CorridaAutorizacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="PathArchivo" Type="varchar(max)" />
+          <Property Name="Procesada" Type="bit" />
+        </EntityType>
+        <EntityType Name="CorridaSubidaArchivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaProceso" Type="datetime" Nullable="false" />
+          <Property Name="Procesada" Type="bit" />
+        </EntityType>
+        <EntityType Name="CorridaSubidaArchivoDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NombreArchivo" Type="varchar" Nullable="false" MaxLength="300" />
+          <Property Name="ProcesadoOK" Type="bit" Nullable="false" />
+          <Property Name="Mensaje" Type="varchar" MaxLength="800" />
+          <Property Name="ArchivoAsociadoId" Type="bigint" />
+          <Property Name="CorridaSubidaArchivoId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CorridaSubidaArchivoLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Mensaje" Type="varchar" MaxLength="7000" />
+        </EntityType>
+        <EntityType Name="DetalleCabecera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="CUIT" Type="bigint" Nullable="false" />
+          <Property Name="PtoVta" Type="int" Nullable="false" />
+          <Property Name="CbteTipo" Type="int" Nullable="false" />
+          <Property Name="FchProceso" Type="datetime" Nullable="false" />
+          <Property Name="CantReg" Type="int" Nullable="false" />
+          <Property Name="Resultado" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="Reproceso" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="DetalleComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="Concepto" Type="int" Nullable="false" />
+          <Property Name="DocTipo" Type="int" Nullable="false" />
+          <Property Name="DocNro" Type="bigint" Nullable="false" />
+          <Property Name="CbteDesde" Type="bigint" Nullable="false" />
+          <Property Name="CbteHasta" Type="bigint" Nullable="false" />
+          <Property Name="CbteFch" Type="datetime" Nullable="false" />
+          <Property Name="Resultado" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="CAE" Type="varchar" MaxLength="14" />
+          <Property Name="CAEFchVto" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DetalleComprobanteComprobante">
+          <Key>
+            <PropertyRef Name="DetalleComprobanteId" />
+            <PropertyRef Name="ComprobanteId" />
+          </Key>
+          <Property Name="DetalleComprobanteId" Type="bigint" Nullable="false" />
+          <Property Name="ComprobanteId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleError">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Msg" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="DetalleEvento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Msg" Type="varchar" Nullable="false" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="EstadoArchivoAsociado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="varchar" MaxLength="10" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="LogCorrida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CorridaId" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Mensaje" Type="varchar(max)" Nullable="false" />
+          <Property Name="Detalle" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Mensaje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Asunto" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Texto" Type="varchar(max)" />
+          <Property Name="NombreArchivo" Type="varchar" MaxLength="100" />
+          <Property Name="Path" Type="varchar(max)" />
+          <Property Name="FechaDeCarga" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MensajeCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MensajeId" Type="bigint" Nullable="false" />
+          <Property Name="ClienteId" Type="bigint" Nullable="false" />
+          <Property Name="Leido" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ObservacionComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DetallleComprobanteId" Type="bigint" Nullable="false" />
+          <Property Name="Code" Type="int" Nullable="false" />
+          <Property Name="Msg" Type="varchar" Nullable="false" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" />
+          <Property Name="Nombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TipoComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="CodigoAfip" Type="int" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'FacturaElectronica.dbo.TipoConcepto' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TipoConcepto">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoContrato">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6035: The relationship 'FK_DetalleComprobante_TipoDocumento' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+      -->
+        <EntityType Name="TipoDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="varchar" MaxLength="50" />
+          <Property Name="CodigoAfip" Type="int" />
+          <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NombreUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="ClienteId" Type="bigint" />
+          <Property Name="Password" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="UsuarioRol">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="RolId" />
+          </Key>
+          <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+          <Property Name="RolId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VisualizacionComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ArchivoAsociadoId" Type="bigint" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="DireccionIP" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="WebServiceAfip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ArchivoAsociado_Auditoria_ArchivoAsociado">
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="1" />
+          <End Role="ArchivoAsociado_Auditoria" Type="FacturaElectronicaModel.Store.ArchivoAsociado_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado_Auditoria">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_Auditoria_Usuario">
+          <End Role="Usuario" Type="FacturaElectronicaModel.Store.Usuario" Multiplicity="1" />
+          <End Role="ArchivoAsociado_Auditoria" Type="FacturaElectronicaModel.Store.ArchivoAsociado_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado_Auditoria">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_Comprobante">
+          <End Role="Comprobante" Type="FacturaElectronicaModel.Store.Comprobante" Multiplicity="1" />
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="ComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_Estado">
+          <End Role="EstadoArchivoAsociado" Type="FacturaElectronicaModel.Store.EstadoArchivoAsociado" Multiplicity="1" />
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_TipoContrato">
+          <End Role="TipoContrato" Type="FacturaElectronicaModel.Store.TipoContrato" Multiplicity="0..1" />
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoContrato">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="TipoContratoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Auditoria_Cliente">
+          <End Role="Cliente" Type="FacturaElectronicaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="Cliente_Auditoria" Type="FacturaElectronicaModel.Store.Cliente_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente_Auditoria">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Auditoria_Usuario">
+          <End Role="Usuario" Type="FacturaElectronicaModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Cliente_Auditoria" Type="FacturaElectronicaModel.Store.Cliente_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente_Auditoria">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobante_Cliente">
+          <End Role="Cliente" Type="FacturaElectronicaModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Comprobante" Type="FacturaElectronicaModel.Store.Comprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comprobante">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_TiposComprobantes">
+          <End Role="TipoComprobante" Type="FacturaElectronicaModel.Store.TipoComprobante" Multiplicity="1" />
+          <End Role="Comprobante" Type="FacturaElectronicaModel.Store.Comprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comprobante">
+              <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorridaSubidaArchivoDetalle_ArchivoAsociado">
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="0..1" />
+          <End Role="CorridaSubidaArchivoDetalle" Type="FacturaElectronicaModel.Store.CorridaSubidaArchivoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoDetalle">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo">
+          <End Role="CorridaSubidaArchivo" Type="FacturaElectronicaModel.Store.CorridaSubidaArchivo" Multiplicity="1" />
+          <End Role="CorridaSubidaArchivoDetalle" Type="FacturaElectronicaModel.Store.CorridaSubidaArchivoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaSubidaArchivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoDetalle">
+              <PropertyRef Name="CorridaSubidaArchivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo">
+          <End Role="CorridaSubidaArchivo" Type="FacturaElectronicaModel.Store.CorridaSubidaArchivo" Multiplicity="1" />
+          <End Role="CorridaSubidaArchivoLog" Type="FacturaElectronicaModel.Store.CorridaSubidaArchivoLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaSubidaArchivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoLog">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleCabeceras_Corridas">
+          <End Role="CorridaAutorizacion" Type="FacturaElectronicaModel.Store.CorridaAutorizacion" Multiplicity="1" />
+          <End Role="DetalleCabecera" Type="FacturaElectronicaModel.Store.DetalleCabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleCabecera">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleComprobantes_Corridas">
+          <End Role="CorridaAutorizacion" Type="FacturaElectronicaModel.Store.CorridaAutorizacion" Multiplicity="1" />
+          <End Role="DetalleComprobante" Type="FacturaElectronicaModel.Store.DetalleComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleComprobante">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleComprobantesComprobantes_Comprobantes">
+          <End Role="Comprobante" Type="FacturaElectronicaModel.Store.Comprobante" Multiplicity="1" />
+          <End Role="DetalleComprobanteComprobante" Type="FacturaElectronicaModel.Store.DetalleComprobanteComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleComprobanteComprobante">
+              <PropertyRef Name="ComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleComprobantesComprobantes_DetalleComprobantes">
+          <End Role="DetalleComprobante" Type="FacturaElectronicaModel.Store.DetalleComprobante" Multiplicity="1" />
+          <End Role="DetalleComprobanteComprobante" Type="FacturaElectronicaModel.Store.DetalleComprobanteComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DetalleComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleComprobanteComprobante">
+              <PropertyRef Name="DetalleComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Errores_Corridas">
+          <End Role="CorridaAutorizacion" Type="FacturaElectronicaModel.Store.CorridaAutorizacion" Multiplicity="1" />
+          <End Role="DetalleError" Type="FacturaElectronicaModel.Store.DetalleError" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleError">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventos_Corridas">
+          <End Role="CorridaAutorizacion" Type="FacturaElectronicaModel.Store.CorridaAutorizacion" Multiplicity="1" />
+          <End Role="DetalleEvento" Type="FacturaElectronicaModel.Store.DetalleEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleEvento">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogCorrida_CorridaAutorizacion">
+          <End Role="CorridaAutorizacion" Type="FacturaElectronicaModel.Store.CorridaAutorizacion" Multiplicity="1" />
+          <End Role="LogCorrida" Type="FacturaElectronicaModel.Store.LogCorrida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LogCorrida">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MensajeCliente_Cliente">
+          <End Role="Cliente" Type="FacturaElectronicaModel.Store.Cliente" Multiplicity="1" />
+          <End Role="MensajeCliente" Type="FacturaElectronicaModel.Store.MensajeCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MensajeCliente">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MensajeCliente_Mensaje">
+          <End Role="Mensaje" Type="FacturaElectronicaModel.Store.Mensaje" Multiplicity="1" />
+          <End Role="MensajeCliente" Type="FacturaElectronicaModel.Store.MensajeCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mensaje">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MensajeCliente">
+              <PropertyRef Name="MensajeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObservacionesComprobantes_DetalleComprobantes">
+          <End Role="DetalleComprobante" Type="FacturaElectronicaModel.Store.DetalleComprobante" Multiplicity="1" />
+          <End Role="ObservacionComprobante" Type="FacturaElectronicaModel.Store.ObservacionComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DetalleComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObservacionComprobante">
+              <PropertyRef Name="DetallleComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Clientes">
+          <End Role="Cliente" Type="FacturaElectronicaModel.Store.Cliente" Multiplicity="0..1" />
+          <End Role="Usuario" Type="FacturaElectronicaModel.Store.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosRoles_Roles">
+          <End Role="Rol" Type="FacturaElectronicaModel.Store.Rol" Multiplicity="1" />
+          <End Role="UsuarioRol" Type="FacturaElectronicaModel.Store.UsuarioRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioRol">
+              <PropertyRef Name="RolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuariosRoles_Usuarios">
+          <End Role="Usuario" Type="FacturaElectronicaModel.Store.Usuario" Multiplicity="1" />
+          <End Role="UsuarioRol" Type="FacturaElectronicaModel.Store.UsuarioRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioRol">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisualizacionComprobante_ArchivoAsociado">
+          <End Role="ArchivoAsociado" Type="FacturaElectronicaModel.Store.ArchivoAsociado" Multiplicity="1" />
+          <End Role="VisualizacionComprobante" Type="FacturaElectronicaModel.Store.VisualizacionComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisualizacionComprobante">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FacturaElectronicaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="FacturaElectronicaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="FacturaElectronicaModel.Cliente" />
+          <EntitySet Name="DetalleCabeceras" EntityType="FacturaElectronicaModel.DetalleCabecera" />
+          <EntitySet Name="DetalleErrors" EntityType="FacturaElectronicaModel.DetalleError" />
+          <EntitySet Name="DetalleEventoes" EntityType="FacturaElectronicaModel.DetalleEvento" />
+          <EntitySet Name="ObservacionComprobantes" EntityType="FacturaElectronicaModel.ObservacionComprobante" />
+          <EntitySet Name="Rols" EntityType="FacturaElectronicaModel.Rol" />
+          <EntitySet Name="Usuarios" EntityType="FacturaElectronicaModel.Usuario" />
+          <AssociationSet Name="FK_Usuarios_Clientes" Association="FacturaElectronicaModel.FK_Usuarios_Clientes">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioRol" Association="FacturaElectronicaModel.UsuarioRol">
+            <End Role="Rol" EntitySet="Rols" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <EntitySet Name="VisualizacionComprobantes" EntityType="FacturaElectronicaModel.VisualizacionComprobante" />
+          <EntitySet Name="TipoComprobantes" EntityType="FacturaElectronicaModel.TipoComprobante" />
+          <EntitySet Name="TipoContratoes" EntityType="FacturaElectronicaModel.TipoContrato" />
+          <EntitySet Name="LogCorridas" EntityType="FacturaElectronicaModel.LogCorrida" />
+          <EntitySet Name="DetalleComprobantes" EntityType="FacturaElectronicaModel.DetalleComprobante" />
+          <AssociationSet Name="FK_ObservacionesComprobantes_DetalleComprobantes" Association="FacturaElectronicaModel.FK_ObservacionesComprobantes_DetalleComprobantes">
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobantes" />
+            <End Role="ObservacionComprobante" EntitySet="ObservacionComprobantes" />
+          </AssociationSet>
+          <EntitySet Name="TipoDocumentoes" EntityType="FacturaElectronicaModel.TipoDocumento" />
+          <EntitySet Name="WebServiceAfips" EntityType="FacturaElectronicaModel.WebServiceAfip" />
+          <EntitySet Name="TipoConceptoes" EntityType="FacturaElectronicaModel.TipoConcepto" />
+          <EntitySet Name="CorridaAutorizacions" EntityType="FacturaElectronicaModel.CorridaAutorizacion" />
+          <AssociationSet Name="FK_DetalleCabeceras_Corridas" Association="FacturaElectronicaModel.FK_DetalleCabeceras_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacions" />
+            <End Role="DetalleCabecera" EntitySet="DetalleCabeceras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleComprobantes_Corridas" Association="FacturaElectronicaModel.FK_DetalleComprobantes_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacions" />
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Errores_Corridas" Association="FacturaElectronicaModel.FK_Errores_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacions" />
+            <End Role="DetalleError" EntitySet="DetalleErrors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eventos_Corridas" Association="FacturaElectronicaModel.FK_Eventos_Corridas">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacions" />
+            <End Role="DetalleEvento" EntitySet="DetalleEventoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogCorrida_CorridaAutorizacion" Association="FacturaElectronicaModel.FK_LogCorrida_CorridaAutorizacion">
+            <End Role="CorridaAutorizacion" EntitySet="CorridaAutorizacions" />
+            <End Role="LogCorrida" EntitySet="LogCorridas" />
+          </AssociationSet>
+          <EntitySet Name="EstadoArchivoAsociadoes" EntityType="FacturaElectronicaModel.EstadoArchivoAsociado" />
+          <EntitySet Name="Comprobantes" EntityType="FacturaElectronicaModel.Comprobante" />
+          <AssociationSet Name="FK_Comprobante_Cliente" Association="FacturaElectronicaModel.FK_Comprobante_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Comprobante" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comprobantes_TiposComprobantes" Association="FacturaElectronicaModel.FK_Comprobantes_TiposComprobantes">
+            <End Role="TipoComprobante" EntitySet="TipoComprobantes" />
+            <End Role="Comprobante" EntitySet="Comprobantes" />
+          </AssociationSet>
+          <AssociationSet Name="DetalleComprobanteComprobante" Association="FacturaElectronicaModel.DetalleComprobanteComprobante">
+            <End Role="Comprobante" EntitySet="Comprobantes" />
+            <End Role="DetalleComprobante" EntitySet="DetalleComprobantes" />
+          </AssociationSet>
+          <EntitySet Name="CorridaSubidaArchivoes" EntityType="FacturaElectronicaModel.CorridaSubidaArchivo" />
+          <EntitySet Name="CorridaSubidaArchivoDetalles" EntityType="FacturaElectronicaModel.CorridaSubidaArchivoDetalle" />
+          <AssociationSet Name="FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo" Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo">
+            <End Role="CorridaSubidaArchivo" EntitySet="CorridaSubidaArchivoes" />
+            <End Role="CorridaSubidaArchivoDetalle" EntitySet="CorridaSubidaArchivoDetalles" />
+          </AssociationSet>
+          <EntitySet Name="CorridaSubidaArchivoLogs" EntityType="FacturaElectronicaModel.CorridaSubidaArchivoLog" />
+          <AssociationSet Name="FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo" Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo">
+            <End Role="CorridaSubidaArchivo" EntitySet="CorridaSubidaArchivoes" />
+            <End Role="CorridaSubidaArchivoLog" EntitySet="CorridaSubidaArchivoLogs" />
+          </AssociationSet>
+          <EntitySet Name="ArchivoAsociadoes" EntityType="FacturaElectronicaModel.ArchivoAsociado" />
+          <AssociationSet Name="FK_ArchivoAsociado_Comprobante" Association="FacturaElectronicaModel.FK_ArchivoAsociado_Comprobante">
+            <End Role="Comprobante" EntitySet="Comprobantes" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_Estado" Association="FacturaElectronicaModel.FK_ArchivoAsociado_Estado">
+            <End Role="EstadoArchivoAsociado" EntitySet="EstadoArchivoAsociadoes" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_TipoContrato" Association="FacturaElectronicaModel.FK_ArchivoAsociado_TipoContrato">
+            <End Role="TipoContrato" EntitySet="TipoContratoes" />
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorridaSubidaArchivoDetalle_ArchivoAsociado" Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+            <End Role="CorridaSubidaArchivoDetalle" EntitySet="CorridaSubidaArchivoDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VisualizacionComprobante_ArchivoAsociado" Association="FacturaElectronicaModel.FK_VisualizacionComprobante_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+            <End Role="VisualizacionComprobante" EntitySet="VisualizacionComprobantes" />
+          </AssociationSet>
+          <EntitySet Name="Mensajes" EntityType="FacturaElectronicaModel.Mensaje" />
+          <EntitySet Name="MensajeClientes" EntityType="FacturaElectronicaModel.MensajeCliente" />
+          <AssociationSet Name="FK_MensajeCliente_Cliente" Association="FacturaElectronicaModel.FK_MensajeCliente_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="MensajeCliente" EntitySet="MensajeClientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MensajeCliente_Mensaje" Association="FacturaElectronicaModel.FK_MensajeCliente_Mensaje">
+            <End Role="Mensaje" EntitySet="Mensajes" />
+            <End Role="MensajeCliente" EntitySet="MensajeClientes" />
+          </AssociationSet>
+          <EntitySet Name="ArchivoAsociado_Auditoria" EntityType="FacturaElectronicaModel.ArchivoAsociado_Auditoria" />
+          <EntitySet Name="Cliente_Auditoria" EntityType="FacturaElectronicaModel.Cliente_Auditoria" />
+          <AssociationSet Name="FK_ArchivoAsociado_Auditoria_ArchivoAsociado" Association="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_ArchivoAsociado">
+            <End Role="ArchivoAsociado" EntitySet="ArchivoAsociadoes" />
+            <End Role="ArchivoAsociado_Auditoria" EntitySet="ArchivoAsociado_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ArchivoAsociado_Auditoria_Usuario" Association="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="ArchivoAsociado_Auditoria" EntitySet="ArchivoAsociado_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Auditoria_Cliente" Association="FacturaElectronicaModel.FK_Cliente_Auditoria_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Cliente_Auditoria" EntitySet="Cliente_Auditoria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Auditoria_Usuario" Association="FacturaElectronicaModel.FK_Cliente_Auditoria_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Cliente_Auditoria" EntitySet="Cliente_Auditoria" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RazonSocial" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="CUIT" Nullable="false" />
+          <Property Type="String" Name="NombreContacto" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApellidoContacto" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailContacto" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreContactoSecundario" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ApellidoContactoSecundario" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EmailContactoSecundario" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="FacturaElectronicaModel.FK_Usuarios_Clientes" FromRole="Cliente" ToRole="Usuario" />
+          <NavigationProperty Name="Comprobantes" Relationship="FacturaElectronicaModel.FK_Comprobante_Cliente" FromRole="Cliente" ToRole="Comprobante" />
+          <NavigationProperty Name="MensajeClientes" Relationship="FacturaElectronicaModel.FK_MensajeCliente_Cliente" FromRole="Cliente" ToRole="MensajeCliente" />
+          <NavigationProperty Name="Cliente_Auditoria" Relationship="FacturaElectronicaModel.FK_Cliente_Auditoria_Cliente" FromRole="Cliente" ToRole="Cliente_Auditoria" />
+          <Property Type="Boolean" Name="CalculaVencimientoConVisualizacionDoc" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleCabecera">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="Int64" Name="CUIT" Nullable="false" />
+          <Property Type="Int32" Name="PtoVta" Nullable="false" />
+          <Property Type="Int32" Name="CbteTipo" Nullable="false" />
+          <Property Type="DateTime" Name="FchProceso" Nullable="false" />
+          <Property Type="Int32" Name="CantReg" Nullable="false" />
+          <Property Type="String" Name="Resultado" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Reproceso" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CorridaAutorizacion" Relationship="FacturaElectronicaModel.FK_DetalleCabeceras_Corridas" FromRole="DetalleCabecera" ToRole="CorridaAutorizacion" />
+        </EntityType>
+        <EntityType Name="DetalleError">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="Int32" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Msg" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CorridaAutorizacion" Relationship="FacturaElectronicaModel.FK_Errores_Corridas" FromRole="DetalleError" ToRole="CorridaAutorizacion" />
+        </EntityType>
+        <EntityType Name="DetalleEvento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="Int32" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Msg" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CorridaAutorizacion" Relationship="FacturaElectronicaModel.FK_Eventos_Corridas" FromRole="DetalleEvento" ToRole="CorridaAutorizacion" />
+        </EntityType>
+        <EntityType Name="ObservacionComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="DetallleComprobanteId" Nullable="false" />
+          <Property Type="Int32" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Msg" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DetalleComprobante" Relationship="FacturaElectronicaModel.FK_ObservacionesComprobantes_DetalleComprobantes" FromRole="ObservacionComprobante" ToRole="DetalleComprobante" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="FacturaElectronicaModel.UsuarioRol" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NombreUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ClienteId" />
+          <NavigationProperty Name="Cliente" Relationship="FacturaElectronicaModel.FK_Usuarios_Clientes" FromRole="Usuario" ToRole="Cliente" />
+          <NavigationProperty Name="Roles" Relationship="FacturaElectronicaModel.UsuarioRol" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="ArchivoAsociado_Auditoria" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_Usuario" FromRole="Usuario" ToRole="ArchivoAsociado_Auditoria" />
+          <NavigationProperty Name="Cliente_Auditoria" Relationship="FacturaElectronicaModel.FK_Cliente_Auditoria_Usuario" FromRole="Usuario" ToRole="Cliente_Auditoria" />
+        </EntityType>
+        <Association Name="FK_Usuarios_Clientes">
+          <End Type="FacturaElectronicaModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="FacturaElectronicaModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioRol">
+          <End Type="FacturaElectronicaModel.Rol" Role="Rol" Multiplicity="*" />
+          <End Type="FacturaElectronicaModel.Usuario" Role="Usuario" Multiplicity="*" />
+        </Association>
+        <EntityType Name="VisualizacionComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ArchivoAsociadoId" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" />
+          <Property Type="String" Name="DireccionIP" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ArchivoAsociado" Relationship="FacturaElectronicaModel.FK_VisualizacionComprobante_ArchivoAsociado" FromRole="VisualizacionComprobante" ToRole="ArchivoAsociado" />
+        </EntityType>
+        <EntityType Name="TipoComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoAfip" />
+          <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Comprobantes" Relationship="FacturaElectronicaModel.FK_Comprobantes_TiposComprobantes" FromRole="TipoComprobante" ToRole="Comprobante" />
+        </EntityType>
+        <EntityType Name="TipoContrato">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ArchivoAsociadoes" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_TipoContrato" FromRole="TipoContrato" ToRole="ArchivoAsociado" />
+        </EntityType>
+        <EntityType Name="LogCorrida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="Mensaje" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Detalle" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CorridaAutorizacion" Relationship="FacturaElectronicaModel.FK_LogCorrida_CorridaAutorizacion" FromRole="LogCorrida" ToRole="CorridaAutorizacion" />
+        </EntityType>
+        <EntityType Name="DetalleComprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="Int32" Name="Concepto" Nullable="false" />
+          <Property Type="Int32" Name="DocTipo" Nullable="false" />
+          <Property Type="Int64" Name="DocNro" Nullable="false" />
+          <Property Type="Int64" Name="CbteDesde" Nullable="false" />
+          <Property Type="Int64" Name="CbteHasta" Nullable="false" />
+          <Property Type="DateTime" Name="CbteFch" Nullable="false" />
+          <Property Type="String" Name="Resultado" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CAE" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CAEFchVto" />
+          <NavigationProperty Name="ObservacionComprobantes" Relationship="FacturaElectronicaModel.FK_ObservacionesComprobantes_DetalleComprobantes" FromRole="DetalleComprobante" ToRole="ObservacionComprobante" />
+          <NavigationProperty Name="CorridaAutorizacion" Relationship="FacturaElectronicaModel.FK_DetalleComprobantes_Corridas" FromRole="DetalleComprobante" ToRole="CorridaAutorizacion" />
+          <NavigationProperty Name="Comprobantes" Relationship="FacturaElectronicaModel.DetalleComprobanteComprobante" FromRole="DetalleComprobante" ToRole="Comprobante" />
+        </EntityType>
+        <Association Name="FK_ObservacionesComprobantes_DetalleComprobantes">
+          <End Type="FacturaElectronicaModel.DetalleComprobante" Role="DetalleComprobante" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.ObservacionComprobante" Role="ObservacionComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DetalleComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ObservacionComprobante">
+              <PropertyRef Name="DetallleComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TipoDocumento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Codigo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="CodigoAfip" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WebServiceAfip">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TipoConcepto">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CorridaAutorizacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="PathArchivo" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Procesada" />
+          <NavigationProperty Name="DetalleCabeceras" Relationship="FacturaElectronicaModel.FK_DetalleCabeceras_Corridas" FromRole="CorridaAutorizacion" ToRole="DetalleCabecera" />
+          <NavigationProperty Name="DetalleComprobantes" Relationship="FacturaElectronicaModel.FK_DetalleComprobantes_Corridas" FromRole="CorridaAutorizacion" ToRole="DetalleComprobante" />
+          <NavigationProperty Name="DetalleErrores" Relationship="FacturaElectronicaModel.FK_Errores_Corridas" FromRole="CorridaAutorizacion" ToRole="DetalleError" />
+          <NavigationProperty Name="DetalleEventos" Relationship="FacturaElectronicaModel.FK_Eventos_Corridas" FromRole="CorridaAutorizacion" ToRole="DetalleEvento" />
+          <NavigationProperty Name="LogCorridas" Relationship="FacturaElectronicaModel.FK_LogCorrida_CorridaAutorizacion" FromRole="CorridaAutorizacion" ToRole="LogCorrida" />
+        </EntityType>
+        <Association Name="FK_DetalleCabeceras_Corridas">
+          <End Type="FacturaElectronicaModel.CorridaAutorizacion" Role="CorridaAutorizacion" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.DetalleCabecera" Role="DetalleCabecera" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleCabecera">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleComprobantes_Corridas">
+          <End Type="FacturaElectronicaModel.CorridaAutorizacion" Role="CorridaAutorizacion" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.DetalleComprobante" Role="DetalleComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleComprobante">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Errores_Corridas">
+          <End Type="FacturaElectronicaModel.CorridaAutorizacion" Role="CorridaAutorizacion" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.DetalleError" Role="DetalleError" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleError">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eventos_Corridas">
+          <End Type="FacturaElectronicaModel.CorridaAutorizacion" Role="CorridaAutorizacion" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.DetalleEvento" Role="DetalleEvento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DetalleEvento">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogCorrida_CorridaAutorizacion">
+          <End Type="FacturaElectronicaModel.CorridaAutorizacion" Role="CorridaAutorizacion" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.LogCorrida" Role="LogCorrida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaAutorizacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LogCorrida">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EstadoArchivoAsociado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Codigo" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Descripcion" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ArchivoAsociadoes" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Estado" FromRole="EstadoArchivoAsociado" ToRole="ArchivoAsociado" />
+        </EntityType>
+        <EntityType Name="Comprobante">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="TipoComprobanteId" Nullable="false" />
+          <Property Type="DateTime" Name="FechaDeCarga" Nullable="false" />
+          <Property Type="Int64" Name="ClienteId" />
+          <Property Type="String" Name="CAE" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CAEFechaVencimiento" />
+          <Property Type="Int64" Name="CbteDesde" />
+          <Property Type="Int64" Name="CbteHasta" />
+          <Property Type="DateTime" Name="CbteFecha" />
+          <Property Type="Int32" Name="PtoVta" />
+          <NavigationProperty Name="Cliente" Relationship="FacturaElectronicaModel.FK_Comprobante_Cliente" FromRole="Comprobante" ToRole="Cliente" />
+          <NavigationProperty Name="TipoComprobante" Relationship="FacturaElectronicaModel.FK_Comprobantes_TiposComprobantes" FromRole="Comprobante" ToRole="TipoComprobante" />
+          <NavigationProperty Name="DetalleComprobantes" Relationship="FacturaElectronicaModel.DetalleComprobanteComprobante" FromRole="Comprobante" ToRole="DetalleComprobante" />
+          <NavigationProperty Name="ArchivoAsociadoes" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Comprobante" FromRole="Comprobante" ToRole="ArchivoAsociado" />
+        </EntityType>
+        <Association Name="FK_Comprobante_Cliente">
+          <End Type="FacturaElectronicaModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="FacturaElectronicaModel.Comprobante" Role="Comprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comprobante">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comprobantes_TiposComprobantes">
+          <End Type="FacturaElectronicaModel.TipoComprobante" Role="TipoComprobante" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.Comprobante" Role="Comprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comprobante">
+              <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DetalleComprobanteComprobante">
+          <End Type="FacturaElectronicaModel.Comprobante" Role="Comprobante" Multiplicity="*" />
+          <End Type="FacturaElectronicaModel.DetalleComprobante" Role="DetalleComprobante" Multiplicity="*" />
+        </Association>
+        <EntityType Name="CorridaSubidaArchivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="FechaProceso" Nullable="false" />
+          <Property Type="Boolean" Name="Procesada" />
+          <NavigationProperty Name="CorridaSubidaArchivoDetalles" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo" FromRole="CorridaSubidaArchivo" ToRole="CorridaSubidaArchivoDetalle" />
+          <NavigationProperty Name="CorridaSubidaArchivoLogs" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo" FromRole="CorridaSubidaArchivo" ToRole="CorridaSubidaArchivoLog" />
+        </EntityType>
+        <EntityType Name="CorridaSubidaArchivoDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="ProcesadoOK" Nullable="false" />
+          <Property Type="String" Name="Mensaje" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="ArchivoAsociadoId" />
+          <Property Type="Int64" Name="CorridaSubidaArchivoId" Nullable="false" />
+          <NavigationProperty Name="CorridaSubidaArchivo" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo" FromRole="CorridaSubidaArchivoDetalle" ToRole="CorridaSubidaArchivo" />
+          <NavigationProperty Name="ArchivoAsociado" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_ArchivoAsociado" FromRole="CorridaSubidaArchivoDetalle" ToRole="ArchivoAsociado" />
+        </EntityType>
+        <Association Name="FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo">
+          <End Type="FacturaElectronicaModel.CorridaSubidaArchivo" Role="CorridaSubidaArchivo" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.CorridaSubidaArchivoDetalle" Role="CorridaSubidaArchivoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaSubidaArchivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoDetalle">
+              <PropertyRef Name="CorridaSubidaArchivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CorridaSubidaArchivoLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="CorridaId" Nullable="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="String" Name="Mensaje" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CorridaSubidaArchivo" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo" FromRole="CorridaSubidaArchivoLog" ToRole="CorridaSubidaArchivo" />
+        </EntityType>
+        <Association Name="FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo">
+          <End Type="FacturaElectronicaModel.CorridaSubidaArchivo" Role="CorridaSubidaArchivo" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.CorridaSubidaArchivoLog" Role="CorridaSubidaArchivoLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorridaSubidaArchivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoLog">
+              <PropertyRef Name="CorridaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ArchivoAsociado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ComprobanteId" Nullable="false" />
+          <Property Type="String" Name="NombreArchivo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PathArchivo" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Int64" Name="NroComprobante" Nullable="false" />
+          <Property Type="Int32" Name="TipoContratoId" />
+          <Property Type="Int32" Name="DiasVencimiento" />
+          <Property Type="DateTime" Name="FechaVencimiento" />
+          <Property Type="DateTime" Name="FechaDeCarga" Nullable="false" />
+          <Property Type="Int32" Name="MesFacturacion" Nullable="false" />
+          <Property Type="Int32" Name="AnioFacturacion" Nullable="false" />
+          <Property Type="Int32" Name="EstadoId" Nullable="false" />
+          <Property Type="Decimal" Name="MontoTotal" Precision="20" Scale="4" />
+          <NavigationProperty Name="Comprobante" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Comprobante" FromRole="ArchivoAsociado" ToRole="Comprobante" />
+          <NavigationProperty Name="EstadoArchivoAsociado" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Estado" FromRole="ArchivoAsociado" ToRole="EstadoArchivoAsociado" />
+          <NavigationProperty Name="TipoContrato" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_TipoContrato" FromRole="ArchivoAsociado" ToRole="TipoContrato" />
+          <NavigationProperty Name="CorridaSubidaArchivoDetalles" Relationship="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_ArchivoAsociado" FromRole="ArchivoAsociado" ToRole="CorridaSubidaArchivoDetalle" />
+          <NavigationProperty Name="VisualizacionComprobantes" Relationship="FacturaElectronicaModel.FK_VisualizacionComprobante_ArchivoAsociado" FromRole="ArchivoAsociado" ToRole="VisualizacionComprobante" />
+          <NavigationProperty Name="ArchivoAsociado_Auditoria" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_ArchivoAsociado" FromRole="ArchivoAsociado" ToRole="ArchivoAsociado_Auditoria" />
+          <Property Type="DateTime" Name="FechaDeRecepcion" />
+        </EntityType>
+        <Association Name="FK_ArchivoAsociado_Comprobante">
+          <End Type="FacturaElectronicaModel.Comprobante" Role="Comprobante" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="ComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_Estado">
+          <End Type="FacturaElectronicaModel.EstadoArchivoAsociado" Role="EstadoArchivoAsociado" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstadoArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_TipoContrato">
+          <End Type="FacturaElectronicaModel.TipoContrato" Role="TipoContrato" Multiplicity="0..1" />
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoContrato">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado">
+              <PropertyRef Name="TipoContratoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorridaSubidaArchivoDetalle_ArchivoAsociado">
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="0..1" />
+          <End Type="FacturaElectronicaModel.CorridaSubidaArchivoDetalle" Role="CorridaSubidaArchivoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CorridaSubidaArchivoDetalle">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VisualizacionComprobante_ArchivoAsociado">
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.VisualizacionComprobante" Role="VisualizacionComprobante" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VisualizacionComprobante">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Mensaje">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Asunto" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Texto" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="NombreArchivo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Path" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="FechaDeCarga" Nullable="false" />
+          <NavigationProperty Name="MensajeClientes" Relationship="FacturaElectronicaModel.FK_MensajeCliente_Mensaje" FromRole="Mensaje" ToRole="MensajeCliente" />
+        </EntityType>
+        <EntityType Name="MensajeCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="MensajeId" Nullable="false" />
+          <Property Type="Int64" Name="ClienteId" Nullable="false" />
+          <Property Type="Boolean" Name="Leido" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="FacturaElectronicaModel.FK_MensajeCliente_Cliente" FromRole="MensajeCliente" ToRole="Cliente" />
+          <NavigationProperty Name="Mensaje" Relationship="FacturaElectronicaModel.FK_MensajeCliente_Mensaje" FromRole="MensajeCliente" ToRole="Mensaje" />
+        </EntityType>
+        <Association Name="FK_MensajeCliente_Cliente">
+          <End Type="FacturaElectronicaModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.MensajeCliente" Role="MensajeCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MensajeCliente">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MensajeCliente_Mensaje">
+          <End Type="FacturaElectronicaModel.Mensaje" Role="Mensaje" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.MensajeCliente" Role="MensajeCliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mensaje">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MensajeCliente">
+              <PropertyRef Name="MensajeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ArchivoAsociado_Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="UsuarioId" Nullable="false" />
+          <Property Type="String" Name="CampoModificado" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValorAnterior" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValorNuevo" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <Property Type="Int64" Name="ArchivoAsociadoId" Nullable="false" />
+          <NavigationProperty Name="ArchivoAsociado" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_ArchivoAsociado" FromRole="ArchivoAsociado_Auditoria" ToRole="ArchivoAsociado" />
+          <NavigationProperty Name="Usuario" Relationship="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_Usuario" FromRole="ArchivoAsociado_Auditoria" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Cliente_Auditoria">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ClienteId" Nullable="false" />
+          <Property Type="Int64" Name="UsuarioId" Nullable="false" />
+          <Property Type="String" Name="CampoModificado" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValorAnterior" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ValorNuevo" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="Fecha" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="FacturaElectronicaModel.FK_Cliente_Auditoria_Cliente" FromRole="Cliente_Auditoria" ToRole="Cliente" />
+          <NavigationProperty Name="Usuario" Relationship="FacturaElectronicaModel.FK_Cliente_Auditoria_Usuario" FromRole="Cliente_Auditoria" ToRole="Usuario" />
+        </EntityType>
+        <Association Name="FK_ArchivoAsociado_Auditoria_ArchivoAsociado">
+          <End Type="FacturaElectronicaModel.ArchivoAsociado" Role="ArchivoAsociado" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.ArchivoAsociado_Auditoria" Role="ArchivoAsociado_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchivoAsociado">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado_Auditoria">
+              <PropertyRef Name="ArchivoAsociadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ArchivoAsociado_Auditoria_Usuario">
+          <End Type="FacturaElectronicaModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.ArchivoAsociado_Auditoria" Role="ArchivoAsociado_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ArchivoAsociado_Auditoria">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Auditoria_Cliente">
+          <End Type="FacturaElectronicaModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.Cliente_Auditoria" Role="Cliente_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente_Auditoria">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Auditoria_Usuario">
+          <End Type="FacturaElectronicaModel.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="FacturaElectronicaModel.Cliente_Auditoria" Role="Cliente_Auditoria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente_Auditoria">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FacturaElectronicaModelStoreContainer" CdmEntityContainer="FacturaElectronicaEntities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="CalculaVencimientoConVisualizacionDoc" ColumnName="CalculaVencimientoConVisualizacionDoc" />
+                <ScalarProperty Name="EmailContactoSecundario" ColumnName="EmailContactoSecundario" />
+                <ScalarProperty Name="ApellidoContactoSecundario" ColumnName="ApellidoContactoSecundario" />
+                <ScalarProperty Name="NombreContactoSecundario" ColumnName="NombreContactoSecundario" />
+                <ScalarProperty Name="EmailContacto" ColumnName="EmailContacto" />
+                <ScalarProperty Name="ApellidoContacto" ColumnName="ApellidoContacto" />
+                <ScalarProperty Name="NombreContacto" ColumnName="NombreContacto" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleCabeceras">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.DetalleCabecera">
+              <MappingFragment StoreEntitySet="DetalleCabecera">
+                <ScalarProperty Name="Reproceso" ColumnName="Reproceso" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="CantReg" ColumnName="CantReg" />
+                <ScalarProperty Name="FchProceso" ColumnName="FchProceso" />
+                <ScalarProperty Name="CbteTipo" ColumnName="CbteTipo" />
+                <ScalarProperty Name="PtoVta" ColumnName="PtoVta" />
+                <ScalarProperty Name="CUIT" ColumnName="CUIT" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleErrors">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.DetalleError">
+              <MappingFragment StoreEntitySet="DetalleError">
+                <ScalarProperty Name="Msg" ColumnName="Msg" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleEventoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.DetalleEvento">
+              <MappingFragment StoreEntitySet="DetalleEvento">
+                <ScalarProperty Name="Msg" ColumnName="Msg" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ObservacionComprobantes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.ObservacionComprobante">
+              <MappingFragment StoreEntitySet="ObservacionComprobante">
+                <ScalarProperty Name="Msg" ColumnName="Msg" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DetallleComprobanteId" ColumnName="DetallleComprobanteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rols">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsuarioRol" TypeName="FacturaElectronicaModel.UsuarioRol" StoreEntitySet="UsuarioRol">
+            <EndProperty Name="Usuario">
+              <ScalarProperty Name="Id" ColumnName="UsuarioId" />
+            </EndProperty>
+            <EndProperty Name="Rol">
+              <ScalarProperty Name="Id" ColumnName="RolId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="VisualizacionComprobantes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.VisualizacionComprobante">
+              <MappingFragment StoreEntitySet="VisualizacionComprobante">
+                <ScalarProperty Name="DireccionIP" ColumnName="DireccionIP" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ArchivoAsociadoId" ColumnName="ArchivoAsociadoId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoComprobantes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.TipoComprobante">
+              <MappingFragment StoreEntitySet="TipoComprobante">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="CodigoAfip" ColumnName="CodigoAfip" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoContratoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.TipoContrato">
+              <MappingFragment StoreEntitySet="TipoContrato">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogCorridas">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.LogCorrida">
+              <MappingFragment StoreEntitySet="LogCorrida">
+                <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleComprobantes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.DetalleComprobante">
+              <MappingFragment StoreEntitySet="DetalleComprobante">
+                <ScalarProperty Name="CAEFchVto" ColumnName="CAEFchVto" />
+                <ScalarProperty Name="CAE" ColumnName="CAE" />
+                <ScalarProperty Name="Resultado" ColumnName="Resultado" />
+                <ScalarProperty Name="CbteFch" ColumnName="CbteFch" />
+                <ScalarProperty Name="CbteHasta" ColumnName="CbteHasta" />
+                <ScalarProperty Name="CbteDesde" ColumnName="CbteDesde" />
+                <ScalarProperty Name="DocNro" ColumnName="DocNro" />
+                <ScalarProperty Name="DocTipo" ColumnName="DocTipo" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoDocumentoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.TipoDocumento">
+              <MappingFragment StoreEntitySet="TipoDocumento">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="CodigoAfip" ColumnName="CodigoAfip" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebServiceAfips">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.WebServiceAfip">
+              <MappingFragment StoreEntitySet="WebServiceAfip">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoConceptoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.TipoConcepto">
+              <MappingFragment StoreEntitySet="TipoConcepto">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorridaAutorizacions">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.CorridaAutorizacion">
+              <MappingFragment StoreEntitySet="CorridaAutorizacion">
+                <ScalarProperty Name="Procesada" ColumnName="Procesada" />
+                <ScalarProperty Name="PathArchivo" ColumnName="PathArchivo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstadoArchivoAsociadoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.EstadoArchivoAsociado">
+              <MappingFragment StoreEntitySet="EstadoArchivoAsociado">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comprobantes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Comprobante">
+              <MappingFragment StoreEntitySet="Comprobante">
+                <ScalarProperty Name="PtoVta" ColumnName="PtoVta" />
+                <ScalarProperty Name="CbteFecha" ColumnName="CbteFecha" />
+                <ScalarProperty Name="CbteHasta" ColumnName="CbteHasta" />
+                <ScalarProperty Name="CbteDesde" ColumnName="CbteDesde" />
+                <ScalarProperty Name="CAEFechaVencimiento" ColumnName="CAEFechaVencimiento" />
+                <ScalarProperty Name="CAE" ColumnName="CAE" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="FechaDeCarga" ColumnName="FechaDeCarga" />
+                <ScalarProperty Name="TipoComprobanteId" ColumnName="TipoComprobanteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DetalleComprobanteComprobante" TypeName="FacturaElectronicaModel.DetalleComprobanteComprobante" StoreEntitySet="DetalleComprobanteComprobante">
+            <EndProperty Name="DetalleComprobante">
+              <ScalarProperty Name="Id" ColumnName="DetalleComprobanteId" />
+            </EndProperty>
+            <EndProperty Name="Comprobante">
+              <ScalarProperty Name="Id" ColumnName="ComprobanteId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CorridaSubidaArchivoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.CorridaSubidaArchivo">
+              <MappingFragment StoreEntitySet="CorridaSubidaArchivo">
+                <ScalarProperty Name="Procesada" ColumnName="Procesada" />
+                <ScalarProperty Name="FechaProceso" ColumnName="FechaProceso" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorridaSubidaArchivoDetalles">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.CorridaSubidaArchivoDetalle">
+              <MappingFragment StoreEntitySet="CorridaSubidaArchivoDetalle">
+                <ScalarProperty Name="CorridaSubidaArchivoId" ColumnName="CorridaSubidaArchivoId" />
+                <ScalarProperty Name="ArchivoAsociadoId" ColumnName="ArchivoAsociadoId" />
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="ProcesadoOK" ColumnName="ProcesadoOK" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorridaSubidaArchivoLogs">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.CorridaSubidaArchivoLog">
+              <MappingFragment StoreEntitySet="CorridaSubidaArchivoLog">
+                <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="CorridaId" ColumnName="CorridaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArchivoAsociadoes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.ArchivoAsociado">
+              <MappingFragment StoreEntitySet="ArchivoAsociado">
+                <ScalarProperty Name="FechaDeRecepcion" ColumnName="FechaDeRecepcion" />
+                <ScalarProperty Name="MontoTotal" ColumnName="MontoTotal" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="AnioFacturacion" ColumnName="AnioFacturacion" />
+                <ScalarProperty Name="MesFacturacion" ColumnName="MesFacturacion" />
+                <ScalarProperty Name="FechaDeCarga" ColumnName="FechaDeCarga" />
+                <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
+                <ScalarProperty Name="DiasVencimiento" ColumnName="DiasVencimiento" />
+                <ScalarProperty Name="TipoContratoId" ColumnName="TipoContratoId" />
+                <ScalarProperty Name="NroComprobante" ColumnName="NroComprobante" />
+                <ScalarProperty Name="PathArchivo" ColumnName="PathArchivo" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="ComprobanteId" ColumnName="ComprobanteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mensajes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Mensaje">
+              <MappingFragment StoreEntitySet="Mensaje">
+                <ScalarProperty Name="FechaDeCarga" ColumnName="FechaDeCarga" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="NombreArchivo" ColumnName="NombreArchivo" />
+                <ScalarProperty Name="Texto" ColumnName="Texto" />
+                <ScalarProperty Name="Asunto" ColumnName="Asunto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MensajeClientes">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.MensajeCliente">
+              <MappingFragment StoreEntitySet="MensajeCliente">
+                <ScalarProperty Name="Leido" ColumnName="Leido" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="MensajeId" ColumnName="MensajeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArchivoAsociado_Auditoria">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.ArchivoAsociado_Auditoria">
+              <MappingFragment StoreEntitySet="ArchivoAsociado_Auditoria">
+                <ScalarProperty Name="ArchivoAsociadoId" ColumnName="ArchivoAsociadoId" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ValorNuevo" ColumnName="ValorNuevo" />
+                <ScalarProperty Name="ValorAnterior" ColumnName="ValorAnterior" />
+                <ScalarProperty Name="CampoModificado" ColumnName="CampoModificado" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente_Auditoria">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.Cliente_Auditoria">
+              <MappingFragment StoreEntitySet="Cliente_Auditoria">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ValorNuevo" ColumnName="ValorNuevo" />
+                <ScalarProperty Name="ValorAnterior" ColumnName="ValorAnterior" />
+                <ScalarProperty Name="CampoModificado" ColumnName="CampoModificado" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="FacturaElectronica.Model" ZoomLevel="54">
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Cliente" Width="1.5" PointX="0.75" PointY="6.125" Height="2.7427376302083388" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.DetalleCabecera" Width="1.875" PointX="6.5" PointY="15.125" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.DetalleError" Width="2.375" PointX="3.375" PointY="17.25" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.DetalleEvento" Width="1.5" PointX="3.375" PointY="19.5" Height="1.7566536458333246" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.ObservacionComprobante" Width="2.25" PointX="10.625" PointY="11.875" Height="1.7566536458333353" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Rol" Width="1.5" PointX="3.75" PointY="0.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Usuario" Width="1.5" PointX="6" PointY="7.75" Height="2.1725878906249996" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Usuarios_Clientes" ManuallyRouted="false" >
+          <ConnectorPoint PointX="2.25" PointY="8.411788303934733" />
+          <ConnectorPoint PointX="3.9791666666666665" PointY="8.411788303934733" />
+          <ConnectorPoint PointX="4.145833333333333" PointY="8.411788303934733" />
+          <ConnectorPoint PointX="5.010416666666667" PointY="8.411788303934733" />
+          <ConnectorPoint PointX="5.177083333333333" PointY="8.411788303934733" />
+          <ConnectorPoint PointX="6" PointY="8.411788303934733" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.UsuarioRol" >
+          <ConnectorPoint PointX="5.09375" PointY="2.537985026041667" />
+          <ConnectorPoint PointX="5.09375" PointY="9.390742029571534" />
+          <ConnectorPoint PointX="6" PointY="9.390742029571534" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.VisualizacionComprobante" Width="2.125" PointX="9.5" PointY="4.375" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.TipoComprobante" Width="1.5" PointX="0.75" PointY="0.875" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.TipoContrato" Width="1.875" PointX="6.375" PointY="0.875" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.LogCorrida" Width="1.5" PointX="1.5" PointY="10.375" Height="1.7566536458333388" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.DetalleComprobante" Width="2.25" PointX="5.625" PointY="10.625" Height="3.2357796223958388" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ObservacionesComprobantes_DetalleComprobantes" >
+          <ConnectorPoint PointX="7.875" PointY="12.865143229166666" />
+          <ConnectorPoint PointX="10.010417166666665" PointY="12.865143229166666" />
+          <ConnectorPoint PointX="10.177083833333333" PointY="12.865143229166666" />
+          <ConnectorPoint PointX="10.625" PointY="12.865143229166666" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.TipoDocumento" Width="1.5" PointX="9" PointY="0.75" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.WebServiceAfip" Width="1.5" PointX="8.375" PointY="6.75" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.TipoConcepto" Width="1.5" PointX="9" PointY="9.25" Height="1.2636116536458246" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.CorridaAutorizacion" Width="1.5" PointX="0.75" PointY="14.5" Height="2.749492187499996" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_DetalleCabeceras_Corridas" >
+          <ConnectorPoint PointX="2.25" PointY="16.190892951660153" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="16.190892951660153" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="16.190892951660153" />
+          <ConnectorPoint PointX="4.479166666666667" PointY="16.190892951660153" />
+          <ConnectorPoint PointX="4.645833333333333" PointY="16.190892951660153" />
+          <ConnectorPoint PointX="6.5" PointY="16.190892951660153" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_DetalleComprobantes_Corridas" >
+          <ConnectorPoint PointX="2.25" PointY="14.78125" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="14.78125" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="14.78125" />
+          <ConnectorPoint PointX="6.21875" PointY="14.78125" />
+          <ConnectorPoint PointX="6.21875" PointY="14.335999348958334" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Errores_Corridas" >
+          <ConnectorPoint PointX="2.25" PointY="15.486071475830077" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="15.486071475830077" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="15.486071475830077" />
+          <ConnectorPoint PointX="4.5625" PointY="15.486071475830077" />
+          <ConnectorPoint PointX="4.5625" PointY="17.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Eventos_Corridas" >
+          <ConnectorPoint PointX="1.5" PointY="17.249492187499996" />
+          <ConnectorPoint PointX="1.5" PointY="20.490143229166669" />
+          <ConnectorPoint PointX="3.375" PointY="20.490143229166669" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_LogCorrida_CorridaAutorizacion" >
+          <ConnectorPoint PointX="1.875" PointY="14.5" />
+          <ConnectorPoint PointX="1.875" PointY="12.547587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.EstadoArchivoAsociado" Width="1.5" PointX="11.375" PointY="0.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Comprobante" Width="2" PointX="2.875" PointY="3.25" Height="3.7109993489583317" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Comprobante_Cliente" >
+          <ConnectorPoint PointX="2.25" PointY="6.5429996744791659" />
+          <ConnectorPoint PointX="2.875" PointY="6.5429996744791659" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Comprobantes_TiposComprobantes" >
+          <ConnectorPoint PointX="2.25" PointY="2.8552864583333339" />
+          <ConnectorPoint PointX="2.875" PointY="3.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.DetalleComprobanteComprobante" >
+          <ConnectorPoint PointX="4.0625" PointY="6.9609993489583317" />
+          <ConnectorPoint PointX="4.0625" PointY="13.473043619791666" />
+          <ConnectorPoint PointX="5.625" PointY="13.473043619791666" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.CorridaSubidaArchivo" Width="1.5" PointX="9.625" PointY="15.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.CorridaSubidaArchivoDetalle" Width="1.5" PointX="11.875" PointY="7.125" Height="2.5571907552083388" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_CorridaSubidaArchivo" >
+          <ConnectorPoint PointX="10.093750499999999" PointY="15.5" />
+          <ConnectorPoint PointX="10.093750499999999" PointY="10.903382161458332" />
+          <ConnectorPoint PointX="10.75" PointY="10.903382161458332" />
+          <ConnectorPoint PointX="10.75" PointY="8.40359537760417" />
+          <ConnectorPoint PointX="11.875" PointY="8.40359537760417" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.CorridaSubidaArchivoLog" Width="1.5" PointX="11.875" PointY="15.5" Height="1.9802864583333264" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoLog_CorridaSubidaArchivo" >
+          <ConnectorPoint PointX="11.125" PointY="16.490143229166662" />
+          <ConnectorPoint PointX="11.875" PointY="16.490143229166662" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.ArchivoAsociado" Width="1.5" PointX="13.625" PointY="1.625" Height="4.48020507812501" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ArchivoAsociado_Comprobante" >
+          <ConnectorPoint PointX="4.875" PointY="3.78125" />
+          <ConnectorPoint PointX="5.010416666666667" PointY="3.7812499999999996" />
+          <ConnectorPoint PointX="5.177083333333333" PointY="3.78125" />
+          <ConnectorPoint PointX="13.625" PointY="3.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ArchivoAsociado_Estado" >
+          <ConnectorPoint PointX="12.875" PointY="2.1439925130208337" />
+          <ConnectorPoint PointX="13.625" PointY="2.1439925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ArchivoAsociado_TipoContrato" >
+          <ConnectorPoint PointX="7.3125" PointY="2.662985026041667" />
+          <ConnectorPoint PointX="7.3125" PointY="3.19086551302084" />
+          <ConnectorPoint PointX="13.625" PointY="3.19086551302084" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_CorridaSubidaArchivoDetalle_ArchivoAsociado" >
+          <ConnectorPoint PointX="13.90625" PointY="6.2975065104166656" />
+          <ConnectorPoint PointX="13.90625" PointY="7.96875" />
+          <ConnectorPoint PointX="13.375" PointY="7.96875" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_VisualizacionComprobante_ArchivoAsociado" >
+          <ConnectorPoint PointX="13.625" PointY="5.3362532552083328" />
+          <ConnectorPoint PointX="11.625" PointY="5.3362532552083328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Mensaje" Width="1.5" PointX="10.25" PointY="18.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.MensajeCliente" Width="1.5" PointX="7.125" PointY="18.875" Height="2.1725878906250102" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_MensajeCliente_Cliente" >
+          <ConnectorPoint PointX="1.5" PointY="9.6436979166666656" />
+          <ConnectorPoint PointX="1.5" PointY="10.125" />
+          <ConnectorPoint PointX="1.8229186666666666" PointY="10.125" />
+          <ConnectorPoint PointX="1.9895853333333331" PointY="10.125" />
+          <ConnectorPoint PointX="3.25" PointY="10.125" />
+          <ConnectorPoint PointX="3.25" PointY="17" />
+          <ConnectorPoint PointX="4.479166666666667" PointY="17" />
+          <ConnectorPoint PointX="4.645833333333333" PointY="17" />
+          <ConnectorPoint PointX="6" PointY="17" />
+          <ConnectorPoint PointX="6" PointY="19.961293945312505" />
+          <ConnectorPoint PointX="7.125" PointY="19.961293945312505" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_MensajeCliente_Mensaje" >
+          <ConnectorPoint PointX="10.25" PointY="19.961293945312505" />
+          <ConnectorPoint PointX="8.625" PointY="19.961293945312505" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="FacturaElectronicaModel.ArchivoAsociado_Auditoria" Width="1.5" PointX="15.875" PointY="4.625" Height="2.7494921875000102" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.Cliente_Auditoria" Width="1.5" PointX="14.25" PointY="8.875" Height="2.7494921875000102" />
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_ArchivoAsociado" >
+          <ConnectorPoint PointX="15.125" PointY="5.4612532552083328" />
+          <ConnectorPoint PointX="15.875" PointY="5.4612532552083328" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_ArchivoAsociado_Auditoria_Usuario" >
+          <ConnectorPoint PointX="6.75" PointY="7.75" />
+          <ConnectorPoint PointX="6.75" PointY="6.5526432291666667" />
+          <ConnectorPoint PointX="13.822916666666666" PointY="6.5526432291666659" />
+          <ConnectorPoint PointX="13.989583333333334" PointY="6.5526432291666667" />
+          <ConnectorPoint PointX="15.875" PointY="6.5526432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Cliente_Auditoria_Cliente" >
+          <ConnectorPoint PointX="1.9062519999999998" PointY="9.6436979166666656" />
+          <ConnectorPoint PointX="1.9062519999999998" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="3.1666666666666665" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="3.3333333333333335" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="3.9791666666666665" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="4.145833333333333" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="5.75" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="5.75" PointY="10.375" />
+          <ConnectorPoint PointX="8.75" PointY="10.375" />
+          <ConnectorPoint PointX="8.75" PointY="11.153382161458332" />
+          <ConnectorPoint PointX="10.010417166666665" PointY="11.153382161458332" />
+          <ConnectorPoint PointX="10.177083833333333" PointY="11.153382161458332" />
+          <ConnectorPoint PointX="13.875" PointY="11.153382161458332" />
+          <ConnectorPoint PointX="13.875" PointY="10.249746093750005" />
+          <ConnectorPoint PointX="14.25" PointY="10.249746093750005" />
+        </AssociationConnector>
+        <AssociationConnector Association="FacturaElectronicaModel.FK_Cliente_Auditoria_Usuario" >
+          <ConnectorPoint PointX="7.5" PointY="8.797841796875" />
+          <ConnectorPoint PointX="10.666666666666666" PointY="8.797841796875" />
+          <ConnectorPoint PointX="10.833333333333334" PointY="8.797841796875" />
+          <ConnectorPoint PointX="11.625" PointY="8.797841796875" />
+          <ConnectorPoint PointX="11.625" PointY="9.9321907552083388" />
+          <ConnectorPoint PointX="14" PointY="9.9321907552083388" />
+          <ConnectorPoint PointX="14" PointY="8.625" />
+          <ConnectorPoint PointX="15" PointY="8.625" />
+          <ConnectorPoint PointX="15" PointY="8.875" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

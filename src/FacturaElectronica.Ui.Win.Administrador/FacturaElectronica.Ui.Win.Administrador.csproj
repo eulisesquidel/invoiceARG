@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88E548EB-3C9A-40F1-AE61-A482BF9F8123}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FacturaElectronica.Ui.Win.Administrador</RootNamespace>
+    <AssemblyName>FacturaElectronica.Ui.Win.Administrador</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>87CA0DCDC713FB81DE6C63B84B9467922EE46002</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FacturaElectronica.Ui.Win.Administrador_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\Cert\CertUtil.cs" />
+    <Compile Include="Code\Corrida\AfipWrapperWcfProxy.cs" />
+    <Compile Include="Code\Corrida\ClientCredentialHelper.cs" />
+    <Compile Include="Code\Corrida\ComprobanteServiceProxy.cs" />
+    <Compile Include="Code\Corrida\SubidaArchivoServiceProxy.cs" />
+    <Compile Include="Code\Corrida\MaestroServiceProxy.cs" />
+    <Compile Include="Code\Corrida\ProcesoCorridaWcfProxy.cs" />
+    <Compile Include="Code\Ejecucion\EjecucionSubidaArchivos.cs" />
+    <Compile Include="Code\FtpClient.cs" />
+    <Compile Include="Code\ServiceFactory.cs" />
+    <Compile Include="Code\Validaciones.cs" />
+    <Compile Include="FormEnviarArchivoIndividualAWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnviarArchivoIndividualAWeb.Designer.cs">
+      <DependentUpon>FormEnviarArchivoIndividualAWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAutorizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAutorizador.Designer.cs">
+      <DependentUpon>FormAutorizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAutorizadorResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAutorizadorResultados.Designer.cs">
+      <DependentUpon>FormAutorizadorResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaEnviosArchivosAWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaEnviosArchivosAWeb.Designer.cs">
+      <DependentUpon>FormConsultaEnviosArchivosAWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCorridas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCorridas.Designer.cs">
+      <DependentUpon>FormCorridas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDetalleDeEnvioArhivoAWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetalleDeEnvioArhivoAWeb.Designer.cs">
+      <DependentUpon>FormDetalleDeEnvioArhivoAWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEnviarArchivosAWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEnviarArchivosAWeb.Designer.cs">
+      <DependentUpon>FormEnviarArchivosAWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsultaWebServicesAFIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultaWebServicesAFIP.Designer.cs">
+      <DependentUpon>FormConsultaWebServicesAFIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceReferenceAfipWrapperService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceComprobanteService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceCorrida\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceMaestro\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReferenceSubidaArchivo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormEnviarArchivoIndividualAWeb.resx">
+      <DependentUpon>FormEnviarArchivoIndividualAWeb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAutorizador.resx">
+      <DependentUpon>FormAutorizador.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAutorizadorResultados.resx">
+      <DependentUpon>FormAutorizadorResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaEnviosArchivosAWeb.resx">
+      <DependentUpon>FormConsultaEnviosArchivosAWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCorridas.resx">
+      <DependentUpon>FormCorridas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetalleDeEnvioArhivoAWeb.resx">
+      <DependentUpon>FormDetalleDeEnvioArhivoAWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEnviarArchivosAWeb.resx">
+      <DependentUpon>FormEnviarArchivosAWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultaWebServicesAFIP.resx">
+      <DependentUpon>FormConsultaWebServicesAFIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.CbteTipoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.ConceptoTipoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.DocTipoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FEAuthRequest.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FECompConsultaResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FECotizacionResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FERecuperaLastCbteResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FERegXReqResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.FETributoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.IvaTipoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.MonedaResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfe.OpcionalTipoResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.ClsFEXAuthRequest.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXGetCMPResponse.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponseAuthorize.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponseLast_CMP.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Cbte_Tipo.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_CheckPermiso.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Ctz.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_DST_cuit.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_DST_pais.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Idi.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Inc.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_LastID.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Mon.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_PtoVenta.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Tex.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Afip.Ws.Wsfex.FEXResponse_Umed.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Constants.CodigoEstadoCbte.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Constants.ResultadoCbte.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Constants.ResultadoCorrida.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ClienteCriteria.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ClienteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ComprobanteArchivoAsociadoDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ComprobanteCriteria.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ComprobanteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.CorridaAutorizacionDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.CorridaSubidaArchivoDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.DetalleComprobanteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.DetalleErrorDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.DetalleEventoDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.EstadoArchivoAsociadoDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.EstadoComprobanteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.EstadoComprobantesDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.LogCorridaDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.ObservacionComprobanteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.RolDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.TipoComprobanteDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.TipoContratoDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.UsuarioDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Contracts.WebServiceAfipDto.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Services.IClienteService.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Services.IComprobanteService.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Services.ICorridaService.datasource" />
+    <None Include="Properties\DataSources\FacturaElectronica.Common.Services.ISeguridadService.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\WsfeClient.wsdl" />
+    <None Include="Service References\ServiceReferenceComprobanteService\ComprobanteService.wsdl" />
+    <None Include="Service References\ServiceReferenceComprobanteService\ComprobanteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceComprobanteService\ComprobanteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceComprobanteService\ComprobanteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceComprobanteService\ComprobanteService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService1.wsdl" />
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceMaestro\MaestroService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceMaestro\MaestroService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceMaestro\MaestroService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceMaestro\MaestrosSevice.wsdl" />
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService1.wsdl" />
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturaElectronica.Afip.Business\FacturaElectronica.Afip.Business.csproj">
+      <Project>{AE2952B6-C7D3-4C5B-ADC2-97C08D01B593}</Project>
+      <Name>FacturaElectronica.Afip.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Afip.Ws\FacturaElectronica.Afip.Ws.csproj">
+      <Project>{5782691D-FFA4-448C-97FC-224E8EBE1D7F}</Project>
+      <Name>FacturaElectronica.Afip.Ws</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Business\FacturaElectronica.Business.csproj">
+      <Project>{EDB6E9BA-CD60-4D99-AF5B-18024D10DF2A}</Project>
+      <Name>FacturaElectronica.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Common\FacturaElectronica.Common.csproj">
+      <Project>{32774052-7837-4A33-8A3C-C80FCAB5EA1E}</Project>
+      <Name>FacturaElectronica.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Core\FacturaElectronica.Core.csproj">
+      <Project>{94811E1D-F79B-4BB7-A664-6D0283C8CECE}</Project>
+      <Name>FacturaElectronica.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ENDESA-Cemsa-Ejemplo.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReferenceAfipWrapperService\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceAfipWrapperService\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceAfipWrapperService\AfipWrapperService.disco" />
+    <None Include="Service References\ServiceReferenceSubidaArchivo\SubidaArchivoService1.disco" />
+    <None Include="Service References\ServiceReferenceCorrida\ProcesoCorridaService1.disco" />
+    <None Include="Service References\ServiceReferenceComprobanteService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReferenceComprobanteService\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceComprobanteService\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceSubidaArchivo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReferenceSubidaArchivo\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceSubidaArchivo\configuration91.svcinfo" />
+    <None Include="Resources\repetir.png" />
+    <None Include="Service References\ServiceReferenceMaestro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReferenceMaestro\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceMaestro\configuration91.svcinfo" />
+    <None Include="Service References\ServiceReferenceMaestro\MaestroService.disco" />
+    <None Include="Service References\ServiceReferenceCorrida\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReferenceCorrida\configuration.svcinfo" />
+    <None Include="Service References\ServiceReferenceCorrida\configuration91.svcinfo" />
+    <None Include="Resources\exportToFile16x16.png" />
+    <None Include="Resources\export16x16.ico" />
+    <None Include="Resources\search16x16.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\openfile.GIF" />
+    <None Include="Resources\autorizar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReferenceAfipWrapperService\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceComprobanteService\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceCorrida\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceMaestro\" />
+    <WCFMetadataStorage Include="Service References\ServiceReferenceSubidaArchivo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

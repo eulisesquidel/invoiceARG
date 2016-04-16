@@ -1,0 +1,37 @@
+
+
+Programa Windows
+---------------------------------------
+app.config
+
+Configurar el path en donde se copiaran los archivos en telefónica (<add key="PathDestinoArchivosXMLParaProcesar")
+Los archivos se copian en PathDestinoArchivosXMLParaProcesar\Procesar
+
+El certificado digital de SSL para el cliente windows debe estar instalado en Trusted Root Certification Authorities en cada máquina
+
+Poner endesafews en el archivo host para que apunte a donde esta el host
+
+Host del Web Service para autorizacion
+--------------------------------------
+<appSettings>
+    <add key="idServicioNegocio" value="wsfe" />
+    <add key="certSigner" value="C=AR, O=ENDESA, SERIALNUMBER=CUIT 23289508759, CN=TestFE" />
+    <add key="cuit" value="23289508759" />
+    <add key="storeName" value="TrustedPeople" />
+    <add key="storeLocation" value="LocalMachine" />
+  </appSettings>
+
+Configurar el pool del iis para que corra con localsystem, recordar configurar el frameowork 4.0
+
+El certificado digital del host tiene que tener el nombre del sitio host en la propiedad name
+La clave privada del certificado se guarda en personal(my) de local machine (porque el pool corre en localmachine)
+
+En el iis hay que poner que solo acepte SSL
+
+Configurar en el web config lso datos del email para ser enviados
+
+
+Sitio Web
+------------------------------------------------
+
+

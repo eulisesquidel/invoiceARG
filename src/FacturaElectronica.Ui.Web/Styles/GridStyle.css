@@ -1,0 +1,179 @@
+﻿
+.editionContainerFilter
+{
+    background-color: #FCFDFE;
+    border-color: #DBDDFF;
+    border-style: solid;
+    border-width: 1px 1px 3px;
+    color: #666666;
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.editionContainerFilter a
+{
+    display: block;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 4px;
+    text-decoration: none;
+}
+
+.editionContainerFilter p
+{
+    float: left;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.editionContainerFilter .title
+{
+     display: block;
+    float: left;
+    text-align: left;
+    width: 100px;
+}
+
+.editionContainerFilter .title2
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: 150px;
+}
+
+
+.editionContainerFilter .titleWithoutWidth
+{
+    display: block;
+    float: left;
+    text-align: left;    
+}
+
+
+.editionContainerForGrid
+{
+    background-color: #FCFDFE;
+    border-color: #DBDDFF;
+    border-style: solid;
+    border-width: 1px 1px 1px;
+    color: #666666;
+}
+
+.buttons
+{
+    font-size:12px;
+    float: left;
+    margin-top: 10px;
+}
+
+.buttons a
+{
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.editionContainerFilter .secondColumn, .editionContainerFilter .thirdColumn
+{
+    margin-left: 30px;
+}
+
+.editionContainerFilter .inputs
+{
+    font-size:12px;
+}
+
+.editionContainerFilter .multiline
+{
+    width: 485px !important;
+    height: 150px;
+}
+
+.editionContainerFilter .cbo
+{
+    width: 151px;
+    font-size:12px;
+}
+
+.editionContainerFilter .chk
+{    
+
+}
+
+.editionContainerFilter .lst
+{
+    width: 151px;
+}
+
+.editionContainerFilter .lstHeight
+{
+    height: 150px;
+    width: 250px;
+}
+
+.editionContainerFilter .span
+{
+
+}
+
+.editionContainerFilter .buscarInline
+{
+    margin-left: 7px;
+    margin-top: 4px;
+    float: left;
+    display: block;
+}
+.editionContainerFilter input.btn
+{
+/*	color:#050; 
+	font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
+	background-color:#fed;
+	border:1px solid; 
+	border-color: #696 #363 #363 #696;*/	
+    background-color: #E1EBF8;
+    border: 1px #00C3F2 solid;
+    color: #0C286C;
+    font: bold 84%;
+    /*line-height: 1.35em;*/
+    padding: 2px 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    /*font-size: 11px;
+    font-family:Verdana;*/
+    width:80px;
+    cursor:pointer;
+    background-position: 0 -25px;
+	
+}
+.editionContainerFilter .btnMouseOver
+{
+    background-color: #00C3F2;
+    border: 1px #00C3F2 solid;
+    color: #0C286C;
+    font: bold 84%;
+    /*line-height: 1.35em;*/
+    padding: 2px 10px;
+    text-decoration: none;
+    white-space: nowrap;
+    /*font-size: 11px;
+    font-family:Verdana;*/
+    width:80px;
+    cursor:pointer;
+    background-position: 0 -25px;	
+}
+
+.lineThrough
+{
+    text-decoration: line-through;
+}
+
+.divSearchLeft
+{
+    float:left;
+    margin-right: 40px;
+}
+
+.txtFechaVtoEditable
+{
+    width: 100px;
+}

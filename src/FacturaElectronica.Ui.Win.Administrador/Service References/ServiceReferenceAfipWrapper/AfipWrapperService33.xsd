@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+  <xs:complexType name="ClsFEXAuthRequest">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q1:PropertyChangedEventHandler" />
+      <xs:element name="cuitField" type="xs:long" />
+      <xs:element name="signField" nillable="true" type="xs:string" />
+      <xs:element name="tokenField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXAuthRequest" nillable="true" type="tns:ClsFEXAuthRequest" />
+  <xs:complexType name="ClsFEXRequest">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q2:PropertyChangedEventHandler" />
+      <xs:element name="cbte_TipoField" type="xs:short" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+      <xs:element name="clienteField" nillable="true" type="xs:string" />
+      <xs:element name="cmps_asocField" nillable="true" type="tns:ArrayOfCmp_asoc" />
+      <xs:element name="cuit_pais_clienteField" type="xs:long" />
+      <xs:element name="domicilio_clienteField" nillable="true" type="xs:string" />
+      <xs:element name="dst_cmpField" type="xs:short" />
+      <xs:element name="fecha_cbteField" nillable="true" type="xs:string" />
+      <xs:element name="forma_pagoField" nillable="true" type="xs:string" />
+      <xs:element name="idField" type="xs:long" />
+      <xs:element name="id_impositivoField" nillable="true" type="xs:string" />
+      <xs:element name="idioma_cbteField" type="xs:short" />
+      <xs:element name="imp_totalField" type="xs:decimal" />
+      <xs:element name="incotermsField" nillable="true" type="xs:string" />
+      <xs:element name="incoterms_DsField" nillable="true" type="xs:string" />
+      <xs:element name="itemsField" nillable="true" type="tns:ArrayOfItem" />
+      <xs:element name="moneda_IdField" nillable="true" type="xs:string" />
+      <xs:element name="moneda_ctzField" type="xs:decimal" />
+      <xs:element name="obsField" nillable="true" type="xs:string" />
+      <xs:element name="obs_comercialesField" nillable="true" type="xs:string" />
+      <xs:element name="permiso_existenteField" nillable="true" type="xs:string" />
+      <xs:element name="permisosField" nillable="true" type="tns:ArrayOfPermiso" />
+      <xs:element name="punto_vtaField" type="xs:short" />
+      <xs:element name="tipo_expoField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXRequest" nillable="true" type="tns:ClsFEXRequest" />
+  <xs:complexType name="ArrayOfCmp_asoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cmp_asoc" nillable="true" type="tns:Cmp_asoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCmp_asoc" nillable="true" type="tns:ArrayOfCmp_asoc" />
+  <xs:complexType name="Cmp_asoc">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q3:PropertyChangedEventHandler" />
+      <xs:element name="cbte_cuitField" type="xs:long" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+      <xs:element name="cbte_punto_vtaField" type="xs:short" />
+      <xs:element name="cbte_tipoField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cmp_asoc" nillable="true" type="tns:Cmp_asoc" />
+  <xs:complexType name="ArrayOfItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Item" nillable="true" type="tns:Item" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfItem" nillable="true" type="tns:ArrayOfItem" />
+  <xs:complexType name="Item">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q4:PropertyChangedEventHandler" />
+      <xs:element name="pro_bonificacionField" type="xs:decimal" />
+      <xs:element name="pro_codigoField" nillable="true" type="xs:string" />
+      <xs:element name="pro_dsField" nillable="true" type="xs:string" />
+      <xs:element name="pro_precio_uniField" type="xs:decimal" />
+      <xs:element name="pro_qtyField" type="xs:decimal" />
+      <xs:element name="pro_total_itemField" type="xs:decimal" />
+      <xs:element name="pro_umedField" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Item" nillable="true" type="tns:Item" />
+  <xs:complexType name="ArrayOfPermiso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Permiso" nillable="true" type="tns:Permiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermiso" nillable="true" type="tns:ArrayOfPermiso" />
+  <xs:complexType name="Permiso">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q5:PropertyChangedEventHandler" />
+      <xs:element name="dst_mercField" type="xs:int" />
+      <xs:element name="id_permisoField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Permiso" nillable="true" type="tns:Permiso" />
+  <xs:complexType name="FEXResponseAuthorize">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q6:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultAuthField" nillable="true" type="tns:ClsFEXOutAuthorize" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponseAuthorize" nillable="true" type="tns:FEXResponseAuthorize" />
+  <xs:complexType name="ClsFEXErr">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q7:PropertyChangedEventHandler" />
+      <xs:element name="errCodeField" type="xs:int" />
+      <xs:element name="errMsgField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXErr" nillable="true" type="tns:ClsFEXErr" />
+  <xs:complexType name="ClsFEXEvents">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q8:PropertyChangedEventHandler" />
+      <xs:element name="eventCodeField" type="xs:int" />
+      <xs:element name="eventMsgField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXEvents" nillable="true" type="tns:ClsFEXEvents" />
+  <xs:complexType name="ClsFEXOutAuthorize">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q9:PropertyChangedEventHandler" />
+      <xs:element name="caeField" nillable="true" type="xs:string" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+      <xs:element name="cbte_tipoField" type="xs:short" />
+      <xs:element name="cuitField" type="xs:long" />
+      <xs:element name="fch_cbteField" nillable="true" type="xs:string" />
+      <xs:element name="fch_venc_CaeField" nillable="true" type="xs:string" />
+      <xs:element name="idField" type="xs:long" />
+      <xs:element name="motivos_ObsField" nillable="true" type="xs:string" />
+      <xs:element name="punto_vtaField" type="xs:short" />
+      <xs:element name="reprocesoField" nillable="true" type="xs:string" />
+      <xs:element name="resultadoField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXOutAuthorize" nillable="true" type="tns:ClsFEXOutAuthorize" />
+  <xs:complexType name="FEXResponse_CheckPermiso">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q10:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ClsFEXResponse_CheckPermiso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_CheckPermiso" nillable="true" type="tns:FEXResponse_CheckPermiso" />
+  <xs:complexType name="ClsFEXResponse_CheckPermiso">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q11:PropertyChangedEventHandler" />
+      <xs:element name="statusField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_CheckPermiso" nillable="true" type="tns:ClsFEXResponse_CheckPermiso" />
+  <xs:complexType name="ClsFEXGetCMP">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q12:PropertyChangedEventHandler" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+      <xs:element name="cbte_tipoField" type="xs:short" />
+      <xs:element name="punto_vtaField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXGetCMP" nillable="true" type="tns:ClsFEXGetCMP" />
+  <xs:complexType name="FEXGetCMPResponse">
+    <xs:sequence>
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q13:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ClsFEXGetCMPR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXGetCMPResponse" nillable="true" type="tns:FEXGetCMPResponse" />
+  <xs:complexType name="ClsFEXGetCMPR">
+    <xs:sequence>
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q14:PropertyChangedEventHandler" />
+      <xs:element name="caeField" nillable="true" type="xs:string" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+      <xs:element name="cbte_tipoField" type="xs:short" />
+      <xs:element name="clienteField" nillable="true" type="xs:string" />
+      <xs:element name="cmps_asocField" nillable="true" type="tns:ArrayOfCmp_asoc" />
+      <xs:element name="cuit_pais_clienteField" type="xs:long" />
+      <xs:element name="domicilio_clienteField" nillable="true" type="xs:string" />
+      <xs:element name="dst_cmpField" type="xs:short" />
+      <xs:element name="fch_venc_CaeField" nillable="true" type="xs:string" />
+      <xs:element name="fecha_cbteField" nillable="true" type="xs:string" />
+      <xs:element name="fecha_cbte_caeField" nillable="true" type="xs:string" />
+      <xs:element name="forma_pagoField" nillable="true" type="xs:string" />
+      <xs:element name="idField" type="xs:long" />
+      <xs:element name="id_impositivoField" nillable="true" type="xs:string" />
+      <xs:element name="idioma_cbteField" type="xs:short" />
+      <xs:element name="imp_totalField" type="xs:decimal" />
+      <xs:element name="incotermsField" nillable="true" type="xs:string" />
+      <xs:element name="incoterms_DsField" nillable="true" type="xs:string" />
+      <xs:element name="itemsField" nillable="true" type="tns:ArrayOfItem" />
+      <xs:element name="moneda_IdField" nillable="true" type="xs:string" />
+      <xs:element name="moneda_ctzField" type="xs:decimal" />
+      <xs:element name="motivos_ObsField" nillable="true" type="xs:string" />
+      <xs:element name="obsField" nillable="true" type="xs:string" />
+      <xs:element name="obs_comercialesField" nillable="true" type="xs:string" />
+      <xs:element name="permiso_existenteField" nillable="true" type="xs:string" />
+      <xs:element name="permisosField" nillable="true" type="tns:ArrayOfPermiso" />
+      <xs:element name="punto_vtaField" type="xs:short" />
+      <xs:element name="resultadoField" nillable="true" type="xs:string" />
+      <xs:element name="tipo_expoField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXGetCMPR" nillable="true" type="tns:ClsFEXGetCMPR" />
+  <xs:complexType name="ClsFEX_LastCMP">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q15:PropertyChangedEventHandler" />
+      <xs:element name="cbte_TipoField" type="xs:short" />
+      <xs:element name="cuitField" type="xs:long" />
+      <xs:element name="pto_ventaField" type="xs:short" />
+      <xs:element name="signField" nillable="true" type="xs:string" />
+      <xs:element name="tokenField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEX_LastCMP" nillable="true" type="tns:ClsFEX_LastCMP" />
+  <xs:complexType name="FEXResponseLast_CMP">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q16:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResult_LastCMPField" nillable="true" type="tns:ClsFEX_LastCMP_Response" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponseLast_CMP" nillable="true" type="tns:FEXResponseLast_CMP" />
+  <xs:complexType name="ClsFEX_LastCMP_Response">
+    <xs:sequence>
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q17:PropertyChangedEventHandler" />
+      <xs:element name="cbte_fechaField" nillable="true" type="xs:string" />
+      <xs:element name="cbte_nroField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEX_LastCMP_Response" nillable="true" type="tns:ClsFEX_LastCMP_Response" />
+  <xs:complexType name="FEXResponse_LastID">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q18:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ClsFEXResponse_LastID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_LastID" nillable="true" type="tns:FEXResponse_LastID" />
+  <xs:complexType name="ClsFEXResponse_LastID">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q19:PropertyChangedEventHandler" />
+      <xs:element name="idField" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_LastID" nillable="true" type="tns:ClsFEXResponse_LastID" />
+  <xs:complexType name="FEXResponse_Cbte_Tipo">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q20:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_Cbte_Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Cbte_Tipo" nillable="true" type="tns:FEXResponse_Cbte_Tipo" />
+  <xs:complexType name="ArrayOfClsFEXResponse_Cbte_Tipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_Cbte_Tipo" nillable="true" type="tns:ClsFEXResponse_Cbte_Tipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_Cbte_Tipo" nillable="true" type="tns:ArrayOfClsFEXResponse_Cbte_Tipo" />
+  <xs:complexType name="ClsFEXResponse_Cbte_Tipo">
+    <xs:sequence>
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q21:PropertyChangedEventHandler" />
+      <xs:element name="cbte_DsField" nillable="true" type="xs:string" />
+      <xs:element name="cbte_IdField" type="xs:short" />
+      <xs:element name="cbte_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="cbte_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Cbte_Tipo" nillable="true" type="tns:ClsFEXResponse_Cbte_Tipo" />
+  <xs:complexType name="FEXResponse_Ctz">
+    <xs:sequence>
+      <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q22:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ClsFEXResponse_Ctz" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Ctz" nillable="true" type="tns:FEXResponse_Ctz" />
+  <xs:complexType name="ClsFEXResponse_Ctz">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q23:PropertyChangedEventHandler" />
+      <xs:element name="mon_ctzField" type="xs:decimal" />
+      <xs:element name="mon_fechaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Ctz" nillable="true" type="tns:ClsFEXResponse_Ctz" />
+  <xs:complexType name="FEXResponse_DST_cuit">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q24:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_DST_cuit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_DST_cuit" nillable="true" type="tns:FEXResponse_DST_cuit" />
+  <xs:complexType name="ArrayOfClsFEXResponse_DST_cuit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_DST_cuit" nillable="true" type="tns:ClsFEXResponse_DST_cuit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_DST_cuit" nillable="true" type="tns:ArrayOfClsFEXResponse_DST_cuit" />
+  <xs:complexType name="ClsFEXResponse_DST_cuit">
+    <xs:sequence>
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q25:PropertyChangedEventHandler" />
+      <xs:element name="dST_CUITField" type="xs:long" />
+      <xs:element name="dST_DsField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_DST_cuit" nillable="true" type="tns:ClsFEXResponse_DST_cuit" />
+  <xs:complexType name="FEXResponse_DST_pais">
+    <xs:sequence>
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q26:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_DST_pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_DST_pais" nillable="true" type="tns:FEXResponse_DST_pais" />
+  <xs:complexType name="ArrayOfClsFEXResponse_DST_pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_DST_pais" nillable="true" type="tns:ClsFEXResponse_DST_pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_DST_pais" nillable="true" type="tns:ArrayOfClsFEXResponse_DST_pais" />
+  <xs:complexType name="ClsFEXResponse_DST_pais">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q27:PropertyChangedEventHandler" />
+      <xs:element name="dST_CodigoField" nillable="true" type="xs:string" />
+      <xs:element name="dST_DsField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_DST_pais" nillable="true" type="tns:ClsFEXResponse_DST_pais" />
+  <xs:complexType name="FEXResponse_Idi">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q28:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_Idi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Idi" nillable="true" type="tns:FEXResponse_Idi" />
+  <xs:complexType name="ArrayOfClsFEXResponse_Idi">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_Idi" nillable="true" type="tns:ClsFEXResponse_Idi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_Idi" nillable="true" type="tns:ArrayOfClsFEXResponse_Idi" />
+  <xs:complexType name="ClsFEXResponse_Idi">
+    <xs:sequence>
+      <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q29:PropertyChangedEventHandler" />
+      <xs:element name="idi_DsField" nillable="true" type="xs:string" />
+      <xs:element name="idi_IdField" type="xs:short" />
+      <xs:element name="idi_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="idi_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Idi" nillable="true" type="tns:ClsFEXResponse_Idi" />
+  <xs:complexType name="FEXResponse_Inc">
+    <xs:sequence>
+      <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q30:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_Inc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Inc" nillable="true" type="tns:FEXResponse_Inc" />
+  <xs:complexType name="ArrayOfClsFEXResponse_Inc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_Inc" nillable="true" type="tns:ClsFEXResponse_Inc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_Inc" nillable="true" type="tns:ArrayOfClsFEXResponse_Inc" />
+  <xs:complexType name="ClsFEXResponse_Inc">
+    <xs:sequence>
+      <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q31:PropertyChangedEventHandler" />
+      <xs:element name="inc_DsField" nillable="true" type="xs:string" />
+      <xs:element name="inc_IdField" nillable="true" type="xs:string" />
+      <xs:element name="inc_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="inc_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Inc" nillable="true" type="tns:ClsFEXResponse_Inc" />
+  <xs:complexType name="FEXResponse_Mon">
+    <xs:sequence>
+      <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q32:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_Mon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Mon" nillable="true" type="tns:FEXResponse_Mon" />
+  <xs:complexType name="ArrayOfClsFEXResponse_Mon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_Mon" nillable="true" type="tns:ClsFEXResponse_Mon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_Mon" nillable="true" type="tns:ArrayOfClsFEXResponse_Mon" />
+  <xs:complexType name="ClsFEXResponse_Mon">
+    <xs:sequence>
+      <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q33:PropertyChangedEventHandler" />
+      <xs:element name="mon_DsField" nillable="true" type="xs:string" />
+      <xs:element name="mon_IdField" nillable="true" type="xs:string" />
+      <xs:element name="mon_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="mon_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Mon" nillable="true" type="tns:ClsFEXResponse_Mon" />
+  <xs:complexType name="FEXResponse_PtoVenta">
+    <xs:sequence>
+      <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q34:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_PtoVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_PtoVenta" nillable="true" type="tns:FEXResponse_PtoVenta" />
+  <xs:complexType name="ArrayOfClsFEXResponse_PtoVenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_PtoVenta" nillable="true" type="tns:ClsFEXResponse_PtoVenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_PtoVenta" nillable="true" type="tns:ArrayOfClsFEXResponse_PtoVenta" />
+  <xs:complexType name="ClsFEXResponse_PtoVenta">
+    <xs:sequence>
+      <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q35:PropertyChangedEventHandler" />
+      <xs:element name="pve_BloqueadoField" nillable="true" type="xs:string" />
+      <xs:element name="pve_FchBajaField" nillable="true" type="xs:string" />
+      <xs:element name="pve_NroField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_PtoVenta" nillable="true" type="tns:ClsFEXResponse_PtoVenta" />
+  <xs:complexType name="FEXResponse_Tex">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q36:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_Tex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Tex" nillable="true" type="tns:FEXResponse_Tex" />
+  <xs:complexType name="ArrayOfClsFEXResponse_Tex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_Tex" nillable="true" type="tns:ClsFEXResponse_Tex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_Tex" nillable="true" type="tns:ArrayOfClsFEXResponse_Tex" />
+  <xs:complexType name="ClsFEXResponse_Tex">
+    <xs:sequence>
+      <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q37:PropertyChangedEventHandler" />
+      <xs:element name="tex_DsField" nillable="true" type="xs:string" />
+      <xs:element name="tex_IdField" type="xs:short" />
+      <xs:element name="tex_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="tex_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_Tex" nillable="true" type="tns:ClsFEXResponse_Tex" />
+  <xs:complexType name="FEXResponse_Umed">
+    <xs:sequence>
+      <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q38:PropertyChangedEventHandler" />
+      <xs:element name="fEXErrField" nillable="true" type="tns:ClsFEXErr" />
+      <xs:element name="fEXEventsField" nillable="true" type="tns:ClsFEXEvents" />
+      <xs:element name="fEXResultGetField" nillable="true" type="tns:ArrayOfClsFEXResponse_UMed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FEXResponse_Umed" nillable="true" type="tns:FEXResponse_Umed" />
+  <xs:complexType name="ArrayOfClsFEXResponse_UMed">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ClsFEXResponse_UMed" nillable="true" type="tns:ClsFEXResponse_UMed" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfClsFEXResponse_UMed" nillable="true" type="tns:ArrayOfClsFEXResponse_UMed" />
+  <xs:complexType name="ClsFEXResponse_UMed">
+    <xs:sequence>
+      <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/System.ComponentModel" name="PropertyChanged" nillable="true" type="q39:PropertyChangedEventHandler" />
+      <xs:element name="umed_DsField" nillable="true" type="xs:string" />
+      <xs:element name="umed_IdField" type="xs:short" />
+      <xs:element name="umed_vig_desdeField" nillable="true" type="xs:string" />
+      <xs:element name="umed_vig_hastaField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ClsFEXResponse_UMed" nillable="true" type="tns:ClsFEXResponse_UMed" />
+</xs:schema>

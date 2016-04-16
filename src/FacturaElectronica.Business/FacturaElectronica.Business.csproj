@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EDB6E9BA-CD60-4D99-AF5B-18024D10DF2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FacturaElectronica.Business</RootNamespace>
+    <AssemblyName>FacturaElectronica.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\ComprobanteService.cs" />
+    <Compile Include="Services\CorridaService.cs" />
+    <Compile Include="Services\MaestrosSevice.cs" />
+    <Compile Include="Services\MensajeService.cs" />
+    <Compile Include="Services\SeguridadService.cs" />
+    <Compile Include="Services\SubidaArchivoService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FacturaElectronica.Afip.Ws\FacturaElectronica.Afip.Ws.csproj">
+      <Project>{5782691D-FFA4-448C-97FC-224E8EBE1D7F}</Project>
+      <Name>FacturaElectronica.Afip.Ws</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Common\FacturaElectronica.Common.csproj">
+      <Project>{32774052-7837-4A33-8A3C-C80FCAB5EA1E}</Project>
+      <Name>FacturaElectronica.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Core\FacturaElectronica.Core.csproj">
+      <Project>{94811E1D-F79B-4BB7-A664-6D0283C8CECE}</Project>
+      <Name>FacturaElectronica.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FacturaElectronica.Data\FacturaElectronica.Data.csproj">
+      <Project>{4092E6BE-8D76-48C1-BC3A-D39ADC2CEFF6}</Project>
+      <Name>FacturaElectronica.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebFramework\WebFramework.csproj">
+      <Project>{1E225FE7-46C5-460E-8F83-5E672163F6CB}</Project>
+      <Name>WebFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

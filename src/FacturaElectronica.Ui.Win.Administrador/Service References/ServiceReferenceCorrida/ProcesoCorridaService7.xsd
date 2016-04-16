@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Common.Contracts" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CorridaAutorizacionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComprobantesAutorizados" nillable="true" type="tns:ArrayOfDetalleComprobanteDto" />
+      <xs:element minOccurs="0" name="ComprobantesConObservaciones" nillable="true" type="tns:ArrayOfDetalleComprobanteDto" />
+      <xs:element minOccurs="0" name="Errores" nillable="true" type="tns:ArrayOfDetalleErrorDto" />
+      <xs:element minOccurs="0" name="Eventos" nillable="true" type="tns:ArrayOfDetalleEventoDto" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="NombreDeArchivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PathArchivo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Procesada" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoComprobante" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CorridaAutorizacionDto" nillable="true" type="tns:CorridaAutorizacionDto" />
+  <xs:complexType name="ArrayOfDetalleComprobanteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleComprobanteDto" nillable="true" type="tns:DetalleComprobanteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleComprobanteDto" nillable="true" type="tns:ArrayOfDetalleComprobanteDto" />
+  <xs:complexType name="DetalleComprobanteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CAE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAEFechaVto" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CbteDesde" type="xs:long" />
+      <xs:element minOccurs="0" name="CbteFecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CbteHasta" type="xs:long" />
+      <xs:element minOccurs="0" name="Concepto" type="xs:int" />
+      <xs:element minOccurs="0" name="ConceptoDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocNro" type="xs:long" />
+      <xs:element minOccurs="0" name="DocTipo" type="xs:int" />
+      <xs:element minOccurs="0" name="DocTipoDesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Observaciones" nillable="true" type="tns:ArrayOfObservacionComprobanteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleComprobanteDto" nillable="true" type="tns:DetalleComprobanteDto" />
+  <xs:complexType name="ArrayOfObservacionComprobanteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObservacionComprobanteDto" nillable="true" type="tns:ObservacionComprobanteDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfObservacionComprobanteDto" nillable="true" type="tns:ArrayOfObservacionComprobanteDto" />
+  <xs:complexType name="ObservacionComprobanteDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ObservacionComprobanteDto" nillable="true" type="tns:ObservacionComprobanteDto" />
+  <xs:complexType name="ArrayOfDetalleErrorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleErrorDto" nillable="true" type="tns:DetalleErrorDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleErrorDto" nillable="true" type="tns:ArrayOfDetalleErrorDto" />
+  <xs:complexType name="DetalleErrorDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleErrorDto" nillable="true" type="tns:DetalleErrorDto" />
+  <xs:complexType name="ArrayOfDetalleEventoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetalleEventoDto" nillable="true" type="tns:DetalleEventoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetalleEventoDto" nillable="true" type="tns:ArrayOfDetalleEventoDto" />
+  <xs:complexType name="DetalleEventoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalleEventoDto" nillable="true" type="tns:DetalleEventoDto" />
+  <xs:complexType name="ArrayOfCorridaAutorizacionDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CorridaAutorizacionDto" nillable="true" type="tns:CorridaAutorizacionDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCorridaAutorizacionDto" nillable="true" type="tns:ArrayOfCorridaAutorizacionDto" />
+  <xs:complexType name="ArrayOfLogCorridaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LogCorridaDto" nillable="true" type="tns:LogCorridaDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLogCorridaDto" nillable="true" type="tns:ArrayOfLogCorridaDto" />
+  <xs:complexType name="LogCorridaDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CorridaId" type="xs:long" />
+      <xs:element minOccurs="0" name="CorridaTerminada" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:long" />
+      <xs:element minOccurs="0" name="Mensaje" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogCorridaDto" nillable="true" type="tns:LogCorridaDto" />
+</xs:schema>

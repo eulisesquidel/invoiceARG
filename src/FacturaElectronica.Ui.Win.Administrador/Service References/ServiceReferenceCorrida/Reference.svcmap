@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6720c1df-1c96-4763-93a8-ebfdcd7d8ebd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1500/ProcesoCorridaService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProcesoCorridaService1.wsdl" MetadataType="Wsdl" ID="39060012-b42f-48ea-aef7-eaedbef1de8d" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?wsdl" />
+    <MetadataFile FileName="ProcesoCorridaService4.xsd" MetadataType="Schema" ID="29dbcecd-c1b3-40cd-8361-201ca22ec7ca" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ProcesoCorridaService5.xsd" MetadataType="Schema" ID="d1d74d8e-c6da-47bd-9a25-57f9987b9029" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ProcesoCorridaService1.disco" MetadataType="Disco" ID="e8a12330-42e0-41e9-a2e9-1ee810db527c" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?disco" />
+    <MetadataFile FileName="ProcesoCorridaService6.xsd" MetadataType="Schema" ID="f6c4a9e7-07cb-4990-a017-bbe61cb2ef01" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProcesoCorridaService7.xsd" MetadataType="Schema" ID="a7a1704a-1dba-4a32-9be3-dad29ad87f77" SourceId="1" SourceUrl="http://localhost:1500/ProcesoCorridaService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

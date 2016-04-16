@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1500/AfipWrapperService.svc?xsd=xsd2" namespace="http://ar.gov.afip.dif.FEV1/" />
+  <xs:element name="GetTiposMonedas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q1:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposMonedasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposMonedasResult" nillable="true" type="q2:MonedaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCotizacion">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q3:FEAuthRequest" />
+        <xs:element minOccurs="0" name="MonId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCotizacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetCotizacionResult" nillable="true" type="q4:FECotizacionResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposCbte">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q5:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposCbteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposCbteResult" nillable="true" type="q6:CbteTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposTributos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q7:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposTributosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposTributosResult" nillable="true" type="q8:FETributoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposIva">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q9:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposIvaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposIvaResult" nillable="true" type="q10:IvaTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposOpcional">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q11:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposOpcionalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposOpcionalResult" nillable="true" type="q12:OpcionalTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompTotXRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q13:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompTotXRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompTotXRequestResult" nillable="true" type="q14:FERegXReqResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q15:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposDocResult" nillable="true" type="q16:DocTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompUltimoAutorizado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q17:FEAuthRequest" />
+        <xs:element minOccurs="0" name="ptoVta" type="xs:int" />
+        <xs:element minOccurs="0" name="cbteTipo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompUltimoAutorizadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompUltimoAutorizadoResult" nillable="true" type="q18:FERecuperaLastCbteResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompConsultar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q19:FEAuthRequest" />
+        <xs:element xmlns:q20="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feCompConsultaReq" nillable="true" type="q20:FECompConsultaReq" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompConsultarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="CompConsultarResult" nillable="true" type="q21:FECompConsultaResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposConcepto">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="feAuthRequest" nillable="true" type="q22:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTiposConceptoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="GetTiposConceptoResult" nillable="true" type="q23:ConceptoTipoResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicket">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://ar.gov.afip.dif.FEV1/" minOccurs="0" name="ObtenerTicketResult" nillable="true" type="q24:FEAuthRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

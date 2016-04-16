@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32774052-7837-4A33-8A3C-C80FCAB5EA1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FacturaElectronica.Common</RootNamespace>
+    <AssemblyName>FacturaElectronica.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\CodigosEstadoArchivoAsociado.cs" />
+    <Compile Include="Constants\ResultadoCbte.cs" />
+    <Compile Include="Constants\ResultadoCorrida.cs" />
+    <Compile Include="Contracts\ComprobanteArchivoAsociadoDto.cs" />
+    <Compile Include="Contracts\ClienteCriteria.cs" />
+    <Compile Include="Contracts\ClienteDto.cs" />
+    <Compile Include="Contracts\ComprobanteDto.cs" />
+    <Compile Include="Contracts\ComprobanteCriteria.cs" />
+    <Compile Include="Contracts\CorridaAutorizacionDto.cs" />
+    <Compile Include="Contracts\CorridaSubidaArchivoDetalleDto.cs" />
+    <Compile Include="Contracts\CorridaSubidaArchivoDto.cs" />
+    <Compile Include="Contracts\CorridaSubidaArchivoLogDto.cs" />
+    <Compile Include="Contracts\DetalleComprobanteDto.cs" />
+    <Compile Include="Contracts\DetalleErrorDto.cs" />
+    <Compile Include="Contracts\DetalleEventoDto.cs" />
+    <Compile Include="Contracts\EjecutarCorridaSubidaArchivo.cs" />
+    <Compile Include="Contracts\EmailConfiguration.cs" />
+    <Compile Include="Contracts\EmailInThread.cs" />
+    <Compile Include="Contracts\EstadoArchivoAsociadoDto.cs" />
+    <Compile Include="Contracts\EstadoComprobantesDto.cs" />
+    <Compile Include="Contracts\LogCorridaDto.cs" />
+    <Compile Include="Contracts\MensajeClienteCriteria.cs" />
+    <Compile Include="Contracts\MensajeClienteDto.cs" />
+    <Compile Include="Contracts\MensajeCriteria.cs" />
+    <Compile Include="Contracts\MensajeDto.cs" />
+    <Compile Include="Contracts\ObservacionComprobanteDto.cs" />
+    <Compile Include="Contracts\RegistroAuditoria.cs" />
+    <Compile Include="Contracts\RolDto.cs" />
+    <Compile Include="Contracts\SearchResult.cs" />
+    <Compile Include="Contracts\Search\CorridaSubidaArchivoSearch.cs" />
+    <Compile Include="Contracts\Search\CorridaSearch.cs" />
+    <Compile Include="Contracts\Search\LogSearch.cs" />
+    <Compile Include="Contracts\TipoComprobanteDto.cs" />
+    <Compile Include="Contracts\TipoContratoDto.cs" />
+    <Compile Include="Contracts\UsuarioCriteria.cs" />
+    <Compile Include="Contracts\UsuarioDto.cs" />
+    <Compile Include="Contracts\VisualizacionComprobanteDto.cs" />
+    <Compile Include="Contracts\WebServiceAfipDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IMensajeService.cs" />
+    <Compile Include="Services\IProcesoCorridaService.cs" />
+    <Compile Include="Services\IClienteService.cs" />
+    <Compile Include="Services\IComprobanteService.cs" />
+    <Compile Include="Services\ICorridaService.cs" />
+    <Compile Include="Services\IMaestrosService.cs" />
+    <Compile Include="Services\ISeguridadService.cs" />
+    <Compile Include="Services\ISubidaArchivoService.cs" />
+    <Compile Include="Services\IWsServiceAfip.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturaElectronica.Afip.Ws\FacturaElectronica.Afip.Ws.csproj">
+      <Project>{5782691D-FFA4-448C-97FC-224E8EBE1D7F}</Project>
+      <Name>FacturaElectronica.Afip.Ws</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

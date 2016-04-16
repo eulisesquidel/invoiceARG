@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WsfeClient" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IAfipWrapperService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpsToken RequireClientCertificate="false" />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:SignedSupportingTokens>
+                      <wsp:Policy>
+                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:WssUsernameToken10 />
+                          </wsp:Policy>
+                        </sp:UsernameToken>
+                      </wsp:Policy>
+                    </sp:SignedSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy />
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd2" namespace="http://ar.gov.afip.dif.FEV1/" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/FacturaElectronica.Afip.Ws.Wsfex" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.ComponentModel" />
+      <xsd:import schemaLocation="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAfipWrapperService_GetTiposMonedas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposMonedas" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposMonedas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposMonedasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetCotizacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetCotizacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposCbte_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposCbte" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposCbte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposCbteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposTributos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposTributos" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposTributos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposTributosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposIva_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposIva" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposIva_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposOpcional_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposOpcional" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposOpcional_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposOpcionalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompTotXRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompTotXRequest" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompTotXRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompTotXRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposDoc" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompUltimoAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompUltimoAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompUltimoAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompUltimoAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompConsultar_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompConsultar" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CompConsultar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompConsultarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposConcepto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposConcepto" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposConcepto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposConceptoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_ObtenerTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTicket" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_ObtenerTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_AutorizarComprobanteExportacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutorizarComprobanteExportacion" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_AutorizarComprobanteExportacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutorizarComprobanteExportacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CheckPermiso_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPermiso" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_CheckPermiso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPermisoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetComprobante_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetComprobante" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetComprobante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetUltimoComprobanteAutorizado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoComprobanteAutorizado" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetUltimoComprobanteAutorizado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUltimoComprobanteAutorizadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetLastId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastId" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetLastId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLastIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposComprobantes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposComprobantes" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposComprobantes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposComprobantesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetFexCotizacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFexCotizacion" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetFexCotizacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFexCotizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetCuits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCuits" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetCuits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCuitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetPaises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaises" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetPaises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetIdiomas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdiomas" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetIdiomas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdiomasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetIncoterms_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncoterms" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetIncoterms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIncotermsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetMonedas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonedas" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetMonedas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonedasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetPuntosDeVenta_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPuntosDeVenta" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetPuntosDeVenta_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPuntosDeVentaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposDeExportacion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposDeExportacion" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetTiposDeExportacion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTiposDeExportacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetUnidadesDeMedida_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnidadesDeMedida" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_GetUnidadesDeMedida_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnidadesDeMedidaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_ObtenerTicketFex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTicketFex" />
+  </wsdl:message>
+  <wsdl:message name="IAfipWrapperService_ObtenerTicketFex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObtenerTicketFexResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAfipWrapperService">
+    <wsdl:operation name="GetTiposMonedas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposMonedas" message="tns:IAfipWrapperService_GetTiposMonedas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposMonedasResponse" message="tns:IAfipWrapperService_GetTiposMonedas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCotizacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetCotizacion" message="tns:IAfipWrapperService_GetCotizacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetCotizacionResponse" message="tns:IAfipWrapperService_GetCotizacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposCbte">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposCbte" message="tns:IAfipWrapperService_GetTiposCbte_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposCbteResponse" message="tns:IAfipWrapperService_GetTiposCbte_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposTributos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposTributos" message="tns:IAfipWrapperService_GetTiposTributos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposTributosResponse" message="tns:IAfipWrapperService_GetTiposTributos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposIva">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposIva" message="tns:IAfipWrapperService_GetTiposIva_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposIvaResponse" message="tns:IAfipWrapperService_GetTiposIva_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposOpcional">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposOpcional" message="tns:IAfipWrapperService_GetTiposOpcional_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposOpcionalResponse" message="tns:IAfipWrapperService_GetTiposOpcional_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompTotXRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/CompTotXRequest" message="tns:IAfipWrapperService_CompTotXRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/CompTotXRequestResponse" message="tns:IAfipWrapperService_CompTotXRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDoc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposDoc" message="tns:IAfipWrapperService_GetTiposDoc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposDocResponse" message="tns:IAfipWrapperService_GetTiposDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompUltimoAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/CompUltimoAutorizado" message="tns:IAfipWrapperService_CompUltimoAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/CompUltimoAutorizadoResponse" message="tns:IAfipWrapperService_CompUltimoAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompConsultar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/CompConsultar" message="tns:IAfipWrapperService_CompConsultar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/CompConsultarResponse" message="tns:IAfipWrapperService_CompConsultar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposConcepto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposConcepto" message="tns:IAfipWrapperService_GetTiposConcepto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposConceptoResponse" message="tns:IAfipWrapperService_GetTiposConcepto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/ObtenerTicket" message="tns:IAfipWrapperService_ObtenerTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/ObtenerTicketResponse" message="tns:IAfipWrapperService_ObtenerTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarComprobanteExportacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/AutorizarComprobanteExportacion" message="tns:IAfipWrapperService_AutorizarComprobanteExportacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/AutorizarComprobanteExportacionResponse" message="tns:IAfipWrapperService_AutorizarComprobanteExportacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermiso">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/CheckPermiso" message="tns:IAfipWrapperService_CheckPermiso_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/CheckPermisoResponse" message="tns:IAfipWrapperService_CheckPermiso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetComprobante">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetComprobante" message="tns:IAfipWrapperService_GetComprobante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetComprobanteResponse" message="tns:IAfipWrapperService_GetComprobante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoComprobanteAutorizado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetUltimoComprobanteAutorizado" message="tns:IAfipWrapperService_GetUltimoComprobanteAutorizado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetUltimoComprobanteAutorizadoResponse" message="tns:IAfipWrapperService_GetUltimoComprobanteAutorizado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetLastId" message="tns:IAfipWrapperService_GetLastId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetLastIdResponse" message="tns:IAfipWrapperService_GetLastId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposComprobantes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposComprobantes" message="tns:IAfipWrapperService_GetTiposComprobantes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposComprobantesResponse" message="tns:IAfipWrapperService_GetTiposComprobantes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFexCotizacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetFexCotizacion" message="tns:IAfipWrapperService_GetFexCotizacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetFexCotizacionResponse" message="tns:IAfipWrapperService_GetFexCotizacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetCuits" message="tns:IAfipWrapperService_GetCuits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetCuitsResponse" message="tns:IAfipWrapperService_GetCuits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetPaises" message="tns:IAfipWrapperService_GetPaises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetPaisesResponse" message="tns:IAfipWrapperService_GetPaises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdiomas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetIdiomas" message="tns:IAfipWrapperService_GetIdiomas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetIdiomasResponse" message="tns:IAfipWrapperService_GetIdiomas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncoterms">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetIncoterms" message="tns:IAfipWrapperService_GetIncoterms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetIncotermsResponse" message="tns:IAfipWrapperService_GetIncoterms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonedas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetMonedas" message="tns:IAfipWrapperService_GetMonedas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetMonedasResponse" message="tns:IAfipWrapperService_GetMonedas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPuntosDeVenta">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetPuntosDeVenta" message="tns:IAfipWrapperService_GetPuntosDeVenta_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetPuntosDeVentaResponse" message="tns:IAfipWrapperService_GetPuntosDeVenta_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDeExportacion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposDeExportacion" message="tns:IAfipWrapperService_GetTiposDeExportacion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetTiposDeExportacionResponse" message="tns:IAfipWrapperService_GetTiposDeExportacion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnidadesDeMedida">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/GetUnidadesDeMedida" message="tns:IAfipWrapperService_GetUnidadesDeMedida_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/GetUnidadesDeMedidaResponse" message="tns:IAfipWrapperService_GetUnidadesDeMedida_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTicketFex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAfipWrapperService/ObtenerTicketFex" message="tns:IAfipWrapperService_ObtenerTicketFex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAfipWrapperService/ObtenerTicketFexResponse" message="tns:IAfipWrapperService_ObtenerTicketFex_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IAfipWrapperService" type="tns:IAfipWrapperService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IAfipWrapperService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTiposMonedas">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposMonedas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCotizacion">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetCotizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposCbte">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposCbte" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposTributos">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposTributos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposIva">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposIva" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposOpcional">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposOpcional" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompTotXRequest">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/CompTotXRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDoc">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompUltimoAutorizado">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/CompUltimoAutorizado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompConsultar">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/CompConsultar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposConcepto">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposConcepto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTicket">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/ObtenerTicket" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutorizarComprobanteExportacion">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/AutorizarComprobanteExportacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPermiso">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/CheckPermiso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetComprobante">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetComprobante" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUltimoComprobanteAutorizado">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetUltimoComprobanteAutorizado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastId">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetLastId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposComprobantes">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposComprobantes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFexCotizacion">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetFexCotizacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuits">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetCuits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaises">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetPaises" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdiomas">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetIdiomas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncoterms">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetIncoterms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonedas">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetMonedas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPuntosDeVenta">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetPuntosDeVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposDeExportacion">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetTiposDeExportacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnidadesDeMedida">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/GetUnidadesDeMedida" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObtenerTicketFex">
+      <soap12:operation soapAction="http://tempuri.org/IAfipWrapperService/ObtenerTicketFex" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsfeClient">
+    <wsdl:port name="WSHttpBinding_IAfipWrapperService" binding="tns:WSHttpBinding_IAfipWrapperService">
+      <soap12:address location="https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://localhost/FacturaElectronicaWsHost/AfipWrapperService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
